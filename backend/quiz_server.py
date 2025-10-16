@@ -29,12 +29,6 @@ def save_high_scores(scores):
     with open(HIGH_SCORES_FILE, 'w') as f:
         json.dump(scores, f, indent=2)
         
-def get_leaderboard():
-    with open('high_scores.json', 'r') as f:
-        scores = json.load(f)
-# Load high scores on startup
-high_scores = load_high_scores()
-
 # Quiz categories with questions
 QUIZ_CATEGORIES = {
     "general": {
@@ -275,23 +269,26 @@ def get_category_high_score(category_id):
     return jsonify({
         "category": category_id,
         "highScore": high_scores.get(category_id, 0)
-        
-@app.route('/api/leaderboard', methods=['GET']
-    # Flatten into list of {player, score, category}
-    leaderboard = []
-    for category, entries in scores.items():
-        for player, score in entries.items():
-            leaderboard.append({
-                'player': player,
-                'score': score,
-                'category': category
-            })
-
-    # Sort top 5 descending
-    top_scores = sorted(leaderboard, key=lambda x: x['score'], reverse=True)[:5]
-    return jsonify(top_scores)
-
     })
+    
+@app.route('/api/leaderboard')
+def get_leaderboard():
+    try:
+        with open('high_scores.json', 'r') as f:
+            scores = json.load(f)
+        # Flatten and sort scores across categories
+        leaderboard = []
+        for category, entries in scores.items():
+            for entry in entries:
+                leaderboard.append({
+                    "name": entry["name"],
+                    "score": entry["score"],
+                    "category": category
+                })
+        leaderboard.sort(key=lambda x: x["score"], reverse=True)
+        return jsonify(leaderboard)
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
 
 # Run the server
 if __name__ == '__main__':

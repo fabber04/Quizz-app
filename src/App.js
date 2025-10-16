@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
+import './difficulty-selector.css';
 import Leadboard from './Leadboard';
 
 const API_BASE_URL = 'http://localhost:5000/api';
@@ -24,6 +25,7 @@ function App() {
   const [streak, setStreak] = useState(0);
   const [maxStreak, setMaxStreak] = useState(0);
   const [wrongAnswers, setWrongAnswers] = useState([]);
+  const [difficulty, setDifficulty] = useState('any'); // new state
 
   // Live timer effect
   useEffect(() => {
@@ -65,11 +67,15 @@ function App() {
   };
 
   // Load questions for selected category
-  const loadQuestions = async (categoryId) => {
+  const loadQuestions = async (categoryId, difficultyLevel = 'any') => {
     setLoading(true);
     setError(null);
     try {
-      const response = await fetch(`${API_BASE_URL}/questions/${categoryId}`);
+      let url = `${API_BASE_URL}/questions/${categoryId}`;
+      if (difficultyLevel !== 'any') {
+        url += `?difficulty=${difficultyLevel}`;
+      }
+      const response = await fetch(url);
       if (!response.ok) {
         throw new Error('Failed to load questions');
       }
@@ -101,7 +107,7 @@ function App() {
       setQuestions(retryQuestions);
       setAppState('quiz');
     } else {
-      loadQuestions(categoryId);
+      loadQuestions(categoryId, difficulty);
       setAppState('quiz');
     }
   };
@@ -225,6 +231,16 @@ function App() {
           <div className="header">
             <h1>Quiz Master</h1>
             <p>Choose your challenge and test your knowledge!</p>
+          </div>
+          {/* Difficulty Selector */}
+          <div className="difficulty-selector">
+            <label>Difficulty: </label>
+            <select value={difficulty} onChange={e => setDifficulty(e.target.value)}>
+              <option value="any">Any</option>
+              <option value="easy">Easy</option>
+              <option value="medium">Medium</option>
+              <option value="hard">Hard</option>
+            </select>
           </div>
 
           {error && (

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
+import Leadboard from './Leadboard';
 
 const API_BASE_URL = 'http://localhost:5000/api';
 
@@ -530,12 +531,12 @@ function App() {
   );
 }
 //added route for Leadboard @taben-zw
-import Leaderboard from './Leaderboard';
 
-function App() {
+
+function Apps() {
   return (
     <div className="App">
-      <Leaderboard />
+      <Leadboard />
       {/* Other components */}
     </div>
   );

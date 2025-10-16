@@ -530,9 +530,17 @@ function App() {
   );
 }
 //added route for Leadboard @taben-zw
-import Leaderboard from "./Leaderboard";
+import Leaderboard from './Leaderboard';
 
-<Route path="/leaderboard" element={<Leaderboard />} />
+function App() {
+  return (
+    <div className="App">
+      <Leaderboard />
+      {/* Other components */}
+    </div>
+  );
+}
+
 
 
 export default App;

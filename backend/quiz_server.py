@@ -5,6 +5,7 @@ from flask import Flask, jsonify
 from flask_cors import CORS
 import json
 import os
+import openai
 
 # Create our Flask app
 app = Flask(__name__)
@@ -150,6 +151,26 @@ QUIZ_CATEGORIES = {
     }
 }
 
+OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")  # Make sure to set this in your environment
+
+def generate_ai_question(category_name):
+    prompt = (
+        f"Generate a multiple-choice quiz question for the category '{category_name}'. "
+        "Provide the question, 4 options, the correct option index, and a brief explanation in JSON format: "
+        '{"question": "...", "options": ["..."], "correct": 0, "explanation": "..."}'
+    )
+    client = openai.OpenAI(api_key=OPENAI_API_KEY)
+    response = client.chat.completions.create(
+        model="gpt-3.5-turbo",  # <-- Change here!
+        messages=[{"role": "user", "content": prompt}],
+        max_tokens=200,
+    )
+    try:
+        content = response.choices[0].message.content
+        return json.loads(content)
+    except Exception:
+        return None
+
 # Route to get all categories
 @app.route('/api/categories', methods=['GET'])
 def get_categories():
@@ -289,6 +310,24 @@ def get_leaderboard():
         return jsonify(leaderboard)
     except Exception as e:
         return jsonify({"error": str(e)}), 500
+
+@app.route('/api/ai-questions', methods=['GET'])
+def get_ai_questions():
+    """Generate 25 random AI questions matching categories"""
+    if not OPENAI_API_KEY:
+        return jsonify({"error": "OpenAI API key not set"}), 500
+
+    categories = list(QUIZ_CATEGORIES.keys())
+    questions = []
+    import random
+    for _ in range(25):
+        cat_key = random.choice(categories)
+        cat_name = QUIZ_CATEGORIES[cat_key]["name"]
+        q = generate_ai_question(cat_name)
+        if q:
+            q["category"] = cat_key
+            questions.append(q)
+    return jsonify({"questions": questions, "total": len(questions)})
 
 # Run the server
 if __name__ == '__main__':

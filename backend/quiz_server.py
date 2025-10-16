@@ -262,7 +262,7 @@ def get_high_scores():
     """Return all high scores"""
     return jsonify({"highScores": high_scores})
 
-# Route to get high score for specific category
+# Route to get high score for specific category and for the leadboard
 @app.route('/api/high-scores/<category_id>', methods=['GET'])
 def get_category_high_score(category_id):
     """Return high score for a specific category"""
@@ -272,6 +272,26 @@ def get_category_high_score(category_id):
     return jsonify({
         "category": category_id,
         "highScore": high_scores.get(category_id, 0)
+        
+@app.route('/api/leaderboard', methods=['GET'])
+def get_leaderboard():
+    with open('high_scores.json', 'r') as f:
+        scores = json.load(f)
+
+    # Flatten into list of {player, score, category}
+    leaderboard = []
+    for category, entries in scores.items():
+        for player, score in entries.items():
+            leaderboard.append({
+                'player': player,
+                'score': score,
+                'category': category
+            })
+
+    # Sort top 5 descending
+    top_scores = sorted(leaderboard, key=lambda x: x['score'], reverse=True)[:5]
+    return jsonify(top_scores)
+
     })
 
 # Run the server

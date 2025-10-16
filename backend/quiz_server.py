@@ -25,6 +25,9 @@ def load_high_scores():
             return {}
     return {}
 
+# Load high scores at startup
+high_scores = load_high_scores()
+
 def save_high_scores(scores):
     """Save high scores to file"""
     with open(HIGH_SCORES_FILE, 'w') as f:

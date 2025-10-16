@@ -28,7 +28,10 @@ def save_high_scores(scores):
     """Save high scores to file"""
     with open(HIGH_SCORES_FILE, 'w') as f:
         json.dump(scores, f, indent=2)
-
+        
+def get_leaderboard():
+    with open('high_scores.json', 'r') as f:
+        scores = json.load(f)
 # Load high scores on startup
 high_scores = load_high_scores()
 
@@ -273,11 +276,7 @@ def get_category_high_score(category_id):
         "category": category_id,
         "highScore": high_scores.get(category_id, 0)
         
-@app.route('/api/leaderboard', methods=['GET'])
-def get_leaderboard():
-    with open('high_scores.json', 'r') as f:
-        scores = json.load(f)
-
+@app.route('/api/leaderboard', methods=['GET']
     # Flatten into list of {player, score, category}
     leaderboard = []
     for category, entries in scores.items():

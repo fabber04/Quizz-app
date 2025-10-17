@@ -21,6 +21,7 @@ import generalKnowledgeEasyQuestions from './questions/GeneralKnowledge/easy.jso
 import generalKnowledgeMediumQuestions from './questions/GeneralKnowledge/medium.json';
 import generalKnowledgeHardQuestions from './questions/GeneralKnowledge/hard.json';
 import generalKnowledgeAnyQuestions from './questions/GeneralKnowledge/any.json';
+import LoginPage from './LoginPage';
 
 const API_BASE_URL = 'http://localhost:5000/api';
 
@@ -45,6 +46,19 @@ function App() {
   const [maxStreak, setMaxStreak] = useState(0);
   const [wrongAnswers, setWrongAnswers] = useState([]);
   const [difficulty, setDifficulty] = useState('any'); // new state
+  const [loggedInUser, setLoggedInUser] = useState(null);
+
+  // Add logout handler
+  const handleLogout = () => {
+    setLoggedInUser(null);
+    setAppState('categories');
+    setSelectedCategory(null);
+    setQuestions([]);
+    setCurrentQuestionIndex(0);
+    setSelectedAnswers({});
+    setScore(null);
+    setError(null);
+  };
 
   // Live timer effect
   useEffect(() => {
@@ -381,6 +395,10 @@ function App() {
     return `${minutes}:${remainingSeconds.toString().padStart(2, '0')}`;
   };
 
+  if (!loggedInUser) {
+    return <LoginPage onLogin={setLoggedInUser} />;
+  }
+
   // Category Selection Screen
   if (appState === 'categories') {
     return (
@@ -389,6 +407,9 @@ function App() {
           <div className="header">
             <h1>Quiz Master</h1>
             <p>Choose your challenge and test your knowledge!</p>
+            <button className="logout-btn" onClick={handleLogout}>
+              Logout
+            </button>
           </div>
           {/* Difficulty Selector */}
           <div className="difficulty-selector">
@@ -456,6 +477,9 @@ function App() {
             <div className="category-badge" style={{ backgroundColor: selectedCategory?.color }}>
               {selectedCategory?.icon} {selectedCategory?.name}
             </div>
+            <button className="logout-btn" onClick={handleLogout}>
+              Logout
+            </button>
           </div>
 
           {score.isNewHighScore && (
@@ -700,6 +724,9 @@ function App() {
         <div className="spinner"></div>
         <h2>Loading questions...</h2>
         {error && <p className="error">Error: {error}</p>}
+        <button className="logout-btn" onClick={handleLogout}>
+          Logout
+        </button>
       </div>
     </div>
   );

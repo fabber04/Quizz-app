@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './App.css';
 import './difficulty-selector.css';
 import Leadboard from './Leadboard';
+import easyQuestions from './easy.json';
 
 const API_BASE_URL = 'http://localhost:5000/api';
 
@@ -71,6 +72,23 @@ function App() {
     setLoading(true);
     setError(null);
     try {
+      // Find the selected category object
+      const selectedCat = categories.find(cat => cat.id === categoryId);
+
+      // Check for Science & Technology + easy
+      if (
+        selectedCat &&
+        selectedCat.name === "Science & Technology" &&
+        difficultyLevel === "easy"
+      ) {
+        // Use questions from easy.json
+        setQuestions(shuffleArray(easyQuestions));
+        setSelectedCategory(selectedCat);
+        setLoading(false);
+        return;
+      }
+
+      // Otherwise, fetch from backend
       let url = `${API_BASE_URL}/questions/${categoryId}`;
       if (difficultyLevel !== 'any') {
         url += `?difficulty=${difficultyLevel}`;
@@ -160,18 +178,31 @@ function App() {
     setLoading(true);
     const timeElapsed = Date.now() - quizStartTime;
     setTotalTimeElapsed(timeElapsed);
-    
+
     try {
+      // Detect if using easy.json questions
+      const isEasyScienceTech =
+        selectedCategory &&
+        selectedCategory.name === "Science & Technology" &&
+        difficulty === "easy";
+
+      const payload = {
+        answers: selectedAnswers,
+        category: selectedCategory.id,
+        timeElapsed: Math.floor(timeElapsed / 1000)
+      };
+
+      // If using easy.json, send questions too
+      if (isEasyScienceTech) {
+        payload.questions = questions;
+      }
+
       const response = await fetch(`${API_BASE_URL}/check-answers`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ 
-          answers: selectedAnswers,
-          category: selectedCategory.id,
-          timeElapsed: Math.floor(timeElapsed / 1000)
-        }),
+        body: JSON.stringify(payload),
       });
 
       if (!response.ok) {
@@ -179,7 +210,7 @@ function App() {
       }
 
       const result = await response.json();
-      
+
       // Track wrong answers for retry feature
       const wrongQs = [];
       result.results.forEach((r, index) => {
@@ -188,7 +219,7 @@ function App() {
         }
       });
       setWrongAnswers(wrongQs);
-      
+
       setScore(result);
       setAppState('results');
     } catch (err) {

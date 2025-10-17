@@ -1255,3 +1255,40 @@ body {
 .logout-btn:hover {
   background: linear-gradient(90deg, #6e8efb 0%, #a777e3 100%);
 }
+
+
+.leaderboard-section {
+  margin: 2rem auto;
+  max-width: 600px;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(80,80,180,0.08);
+  padding: 1.5rem;
+}
+.leaderboard-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+.leaderboard-table th, .leaderboard-table td {
+  padding: 0.7rem;
+  border-bottom: 1px solid #eee;
+  text-align: center;
+}
+.leaderboard-table th {
+  background: #f5f5fa;
+  color: #4b3ca7;
+}
+.leaderboard-btn {
+  margin: 1rem 0;
+  padding: 0.5rem 1.2rem;
+  background: linear-gradient(90deg, #6e8efb 0%, #a777e3 100%);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.leaderboard-btn:hover {
+  background: linear-gradient(90deg, #a777e3 0%, #6e8efb 100%);
+}

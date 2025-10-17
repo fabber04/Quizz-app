@@ -3,6 +3,8 @@ import './App.css';
 import './difficulty-selector.css';
 import Leadboard from './Leadboard';
 import easyQuestions from './easy.json';
+import mediumQuestions from './medium.json';
+import hardQuestions from './hard.json'; 
 
 const API_BASE_URL = 'http://localhost:5000/api';
 
@@ -75,14 +77,37 @@ function App() {
       // Find the selected category object
       const selectedCat = categories.find(cat => cat.id === categoryId);
 
-      // Check for Science & Technology + easy
+      // Use easy.json for Science & Technology + easy
       if (
         selectedCat &&
         selectedCat.name === "Science & Technology" &&
         difficultyLevel === "easy"
       ) {
-        // Use questions from easy.json
         setQuestions(shuffleArray(easyQuestions));
+        setSelectedCategory(selectedCat);
+        setLoading(false);
+        return;
+      }
+
+      // Use medium.json for Science & Technology + medium
+      if (
+        selectedCat &&
+        selectedCat.name === "Science & Technology" &&
+        difficultyLevel === "medium"
+      ) {
+        setQuestions(shuffleArray(mediumQuestions));
+        setSelectedCategory(selectedCat);
+        setLoading(false);
+        return;
+      }
+
+      // Use hard.json for Science & Technology + hard
+      if (
+        selectedCat &&
+        selectedCat.name === "Science & Technology" &&
+        difficultyLevel === "hard"
+      ) {
+        setQuestions(shuffleArray(hardQuestions));
         setSelectedCategory(selectedCat);
         setLoading(false);
         return;

@@ -5,6 +5,9 @@ import Leadboard from './Leadboard';
 import easyQuestions from './questions/ScienceAndTechnology/easy.json';
 import mediumQuestions from './questions/ScienceAndTechnology/medium.json';
 import hardQuestions from './questions/ScienceAndTechnology/hard.json'; 
+import mathEasyQuestions from './questions/Mathematics/easy.json';
+import mathMediumQuestions from './questions/Mathematics/medium.json';
+import mathHardQuestions from './questions/Mathematics/hard.json';
 
 const API_BASE_URL = 'http://localhost:5000/api';
 
@@ -74,16 +77,51 @@ function App() {
     setLoading(true);
     setError(null);
     try {
-      // Find the selected category object
       const selectedCat = categories.find(cat => cat.id === categoryId);
 
-      // Use easy.json for Science & Technology + easy
+      // Science & Technology - easy
       if (
         selectedCat &&
         selectedCat.name === "Science & Technology" &&
         difficultyLevel === "easy"
       ) {
         setQuestions(shuffleArray(easyQuestions));
+        setSelectedCategory(selectedCat);
+        setLoading(false);
+        return;
+      }
+
+      // Mathematics - easy
+      if (
+        selectedCat &&
+        selectedCat.name === "Mathematics" &&
+        difficultyLevel === "easy"
+      ) {
+        setQuestions(shuffleArray(mathEasyQuestions));
+        setSelectedCategory(selectedCat);
+        setLoading(false);
+        return;
+      }
+
+      // Mathematics - medium
+      if (
+        selectedCat &&
+        selectedCat.name === "Mathematics" &&
+        difficultyLevel === "medium"
+      ) {
+        setQuestions(shuffleArray(mathMediumQuestions));
+        setSelectedCategory(selectedCat);
+        setLoading(false);
+        return;
+      }
+
+      // Mathematics - hard
+      if (
+        selectedCat &&
+        selectedCat.name === "Mathematics" &&
+        difficultyLevel === "hard"
+      ) {
+        setQuestions(shuffleArray(mathHardQuestions));
         setSelectedCategory(selectedCat);
         setLoading(false);
         return;

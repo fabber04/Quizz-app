@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react';
 import './App.css';
 import './difficulty-selector.css';
 import Leadboard from './Leadboard';
-import easyQuestions from './easy.json';
-import mediumQuestions from './medium.json';
-import hardQuestions from './hard.json'; 
+import easyQuestions from './questions/ScienceAndTechnology/easy.json';
+import mediumQuestions from './questions/ScienceAndTechnology/medium.json';
+import hardQuestions from './questions/ScienceAndTechnology/hard.json'; 
 
 const API_BASE_URL = 'http://localhost:5000/api';
 

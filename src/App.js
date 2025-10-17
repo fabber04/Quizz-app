@@ -8,6 +8,12 @@ import hardQuestions from './questions/ScienceAndTechnology/hard.json';
 import mathEasyQuestions from './questions/Mathematics/easy.json';
 import mathMediumQuestions from './questions/Mathematics/medium.json';
 import mathHardQuestions from './questions/Mathematics/hard.json';
+import historyEasyQuestions from './questions/History/easy.json';
+import historyMediumQuestions from './questions/History/medium.json';
+import historyHardQuestions from './questions/History/hard.json';
+import generalKnowledgeEasyQuestions from './questions/GeneralKnowledge/easy.json';
+import generalKnowledgeMediumQuestions from './questions/GeneralKnowledge/medium.json';
+import generalKnowledgeHardQuestions from './questions/GeneralKnowledge/hard.json';
 
 const API_BASE_URL = 'http://localhost:5000/api';
 
@@ -127,25 +133,73 @@ function App() {
         return;
       }
 
-      // Use medium.json for Science & Technology + medium
+      // History - easy
       if (
         selectedCat &&
-        selectedCat.name === "Science & Technology" &&
-        difficultyLevel === "medium"
+        selectedCat.name === "History" &&
+        difficultyLevel === "easy"
       ) {
-        setQuestions(shuffleArray(mediumQuestions));
+        setQuestions(shuffleArray(historyEasyQuestions));
         setSelectedCategory(selectedCat);
         setLoading(false);
         return;
       }
 
-      // Use hard.json for Science & Technology + hard
+      // History - medium
       if (
         selectedCat &&
-        selectedCat.name === "Science & Technology" &&
+        selectedCat.name === "History" &&
+        difficultyLevel === "medium"
+      ) {
+        setQuestions(shuffleArray(historyMediumQuestions));
+        setSelectedCategory(selectedCat);
+        setLoading(false);
+        return;
+      }
+
+      // History - hard
+      if (
+        selectedCat &&
+        selectedCat.name === "History" &&
         difficultyLevel === "hard"
       ) {
-        setQuestions(shuffleArray(hardQuestions));
+        setQuestions(shuffleArray(historyHardQuestions));
+        setSelectedCategory(selectedCat);
+        setLoading(false);
+        return;
+      }
+
+      // General Knowledge - easy
+      if (
+        selectedCat &&
+        selectedCat.name === "General Knowledge" &&
+        difficultyLevel === "easy"
+      ) {
+        setQuestions(shuffleArray(generalKnowledgeEasyQuestions));
+        setSelectedCategory(selectedCat);
+        setLoading(false);
+        return;
+      }
+
+      // General Knowledge - medium
+      if (
+        selectedCat &&
+        selectedCat.name === "General Knowledge" &&
+        difficultyLevel === "medium"
+      ) {
+        setQuestions(shuffleArray(generalKnowledgeMediumQuestions));
+        setSelectedCategory(selectedCat);
+        setLoading(false);
+        return;
+      }
+
+      // General Knowledge - hard
+      if (
+        selectedCat &&
+        selectedCat.name === "General Knowledge" &&
+        difficultyLevel === "hard"
+      ) {
+        setQuestions(shuffleArray(generalKnowledgeHardQuestions));
         setSelectedCategory(selectedCat);
         setLoading(false);
         return;

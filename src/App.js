@@ -41,14 +41,14 @@ function App() {
   const [totalTimeElapsed, setTotalTimeElapsed] = useState(0);
   const [currentTime, setCurrentTime] = useState(0);
   
-  // New features
+  // Adding new features for the app 
   const [streak, setStreak] = useState(0);
   const [maxStreak, setMaxStreak] = useState(0);
   const [wrongAnswers, setWrongAnswers] = useState([]);
-  const [difficulty, setDifficulty] = useState('any'); // new state
-  const [loggedInUser, setLoggedInUser] = useState(null);
-  const [showLeaderboard, setShowLeaderboard] = useState(false);
-  const [bgMuted, setBgMuted] = useState(false);
+  const [difficulty, setDifficulty] = useState('any'); // for the diificulty levels
+  const [loggedInUser, setLoggedInUser] = useState(null); // for the logged in user
+  const [showLeaderboard, setShowLeaderboard] = useState(false); // toggle to show the leaderboard
+  const [bgMuted, setBgMuted] = useState(false); // background sound
   const bgAudioRef = useRef(null);
 
   // Auto-play background sound when app loads
@@ -291,7 +291,7 @@ function App() {
     const currentQ = questions[questionIndex];
     const isCorrect = answerIndex === currentQ.correct;
 
-    // Play sound effect
+    // Play sound effect for either the correct or wrong answer
     playSound(isCorrect ? '/sounds/correct.wav' : '/sounds/wrong.mp3');
 
     setSelectedAnswers(prev => ({
@@ -365,7 +365,7 @@ function App() {
         correct,
         total,
         score: scorePercent,
-        // Optionally add more fields if needed
+     
       });
       setAppState('results');
     } catch (err) {
@@ -408,6 +408,7 @@ function App() {
     return `${minutes}:${remainingSeconds.toString().padStart(2, '0')}`;
   };
 
+  // Play sound in the background 
   const playSound = (src) => {
     const audio = new window.Audio(src);
     audio.volume = 0.7; // Adjust volume if needed
@@ -454,8 +455,7 @@ function App() {
         {bgMuted ? '🔇' : '🔊'}
       </button>
 
-      {/* --- Place your existing conditional rendering below --- */}
-      {/* Example: */}
+     
       {!loggedInUser ? (
         <LoginPage onLogin={setLoggedInUser} />
       ) : appState === 'categories' ? (

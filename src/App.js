@@ -53,17 +53,18 @@ function App() {
   const [bgMuted, setBgMuted] = useState(false); // background sound
   const bgAudioRef = useRef(null);
 
-  // Auto-play background sound when app loads
+  // Auto-play background sound only when logged in
   useEffect(() => {
     if (bgAudioRef.current) {
       bgAudioRef.current.volume = 0.3;
-      if (!bgMuted) {
+      if (loggedInUser && !bgMuted) {
         bgAudioRef.current.play().catch(() => {});
       } else {
         bgAudioRef.current.pause();
+        bgAudioRef.current.currentTime = 0; // Reset to start
       }
     }
-  }, [bgMuted]);
+  }, [bgMuted, loggedInUser]);
 
   // Add logout handler
   const handleLogout = () => {
@@ -75,6 +76,7 @@ function App() {
     setSelectedAnswers({});
     setScore(null);
     setError(null);
+    setBgMuted(false); // Optionally reset mute on logout
   };
 
   // Live timer effect
@@ -421,6 +423,7 @@ function App() {
 
   // Play sound in the background 
   const playSound = (src) => {
+    if (bgMuted) return; // Don't play if muted
     const audio = new window.Audio(src);
     audio.volume = 0.7; // Adjust volume if needed
     audio.play();

@@ -22,6 +22,8 @@ import generalKnowledgeMediumQuestions from './questions/GeneralKnowledge/medium
 import generalKnowledgeHardQuestions from './questions/GeneralKnowledge/hard.json';
 import generalKnowledgeAnyQuestions from './questions/GeneralKnowledge/any.json';
 import LoginPage from './LoginPage';
+import confetti from "canvas-confetti";
+import react from 'react';
 
 const API_BASE_URL = 'http://localhost:5000/api';
 
@@ -294,6 +296,15 @@ function App() {
     // Play sound effect for either the correct or wrong answer
     playSound(isCorrect ? '/sounds/correct.wav' : '/sounds/wrong.mp3');
 
+    // trigger a confetti when answer is correct
+    if (isCorrect) {
+      confetti({
+        particleCount: 150,
+        spread: 80,
+        origin: {y: 0.5},
+      });
+    }
+    
     setSelectedAnswers(prev => ({
       ...prev,
       [questionIndex]: answerIndex

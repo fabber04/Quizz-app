@@ -1,0 +1,152 @@
+[
+  {
+    "question": "Which year did the French Revolution begin?",
+    "options": ["1776", "1789", "1804", "1812"],
+    "correct": 1,
+    "explanation": "The French Revolution began in 1789."
+  },
+  {
+    "question": "Who was the longest-reigning British monarch before Queen Elizabeth II?",
+    "options": ["Queen Victoria", "King George III", "Queen Mary", "King Henry VIII"],
+    "correct": 0,
+    "explanation": "Queen Victoria was the longest-reigning monarch before Elizabeth II."
+  },
+  {
+    "question": "Which empire was known for its road system and aqueducts?",
+    "options": ["Greek Empire", "Roman Empire", "Persian Empire", "Ottoman Empire"],
+    "correct": 1,
+    "explanation": "The Roman Empire was famous for its roads and aqueducts."
+  },
+  {
+    "question": "Who was the leader of the Soviet Union during World War II?",
+    "options": ["Vladimir Lenin", "Joseph Stalin", "Leon Trotsky", "Nikita Khrushchev"],
+    "correct": 1,
+    "explanation": "Joseph Stalin led the Soviet Union during World War II."
+  },
+  {
+    "question": "Which battle marked the end of Napoleon's rule in France?",
+    "options": ["Battle of Trafalgar", "Battle of Waterloo", "Battle of Leipzig", "Battle of Austerlitz"],
+    "correct": 1,
+    "explanation": "The Battle of Waterloo ended Napoleon's rule."
+  },
+  {
+    "question": "Who was the first female Prime Minister of the United Kingdom?",
+    "options": ["Theresa May", "Margaret Thatcher", "Angela Merkel", "Indira Gandhi"],
+    "correct": 1,
+    "explanation": "Margaret Thatcher was the first female UK Prime Minister."
+  },
+  {
+    "question": "Which civilization invented the cuneiform writing system?",
+    "options": ["Egyptians", "Sumerians", "Phoenicians", "Greeks"],
+    "correct": 1,
+    "explanation": "The Sumerians invented cuneiform."
+  },
+  {
+    "question": "Who was the famous Carthaginian general who crossed the Alps?",
+    "options": ["Scipio", "Hannibal", "Julius Caesar", "Augustus"],
+    "correct": 1,
+    "explanation": "Hannibal crossed the Alps to invade Italy."
+  },
+  {
+    "question": "Which U.S. President issued the Emancipation Proclamation?",
+    "options": ["George Washington", "Abraham Lincoln", "Ulysses S. Grant", "Andrew Johnson"],
+    "correct": 1,
+    "explanation": "Abraham Lincoln issued the Emancipation Proclamation."
+  },
+  {
+    "question": "What was the main cause of the Cold War?",
+    "options": ["Religious conflict", "Ideological differences", "Territorial disputes", "Economic rivalry"],
+    "correct": 1,
+    "explanation": "The Cold War was mainly due to ideological differences between the USA and USSR."
+  },
+  {
+    "question": "Who was the first emperor of China?",
+    "options": ["Qin Shi Huang", "Kublai Khan", "Sun Yat-sen", "Mao Zedong"],
+    "correct": 0,
+    "explanation": "Qin Shi Huang was the first emperor of China."
+  },
+  {
+    "question": "Which explorer discovered the sea route to India around Africa?",
+    "options": ["Christopher Columbus", "Vasco da Gama", "Ferdinand Magellan", "James Cook"],
+    "correct": 1,
+    "explanation": "Vasco da Gama discovered the sea route to India."
+  },
+  {
+    "question": "Who was the founder of the Mongol Empire?",
+    "options": ["Kublai Khan", "Genghis Khan", "Attila the Hun", "Tamerlane"],
+    "correct": 1,
+    "explanation": "Genghis Khan founded the Mongol Empire."
+  },
+  {
+    "question": "Which war was fought between the North and South regions of the United States?",
+    "options": ["Revolutionary War", "Civil War", "Vietnam War", "Korean War"],
+    "correct": 1,
+    "explanation": "The Civil War was fought between the North and South."
+  },
+  {
+    "question": "Who was the famous South African anti-apartheid revolutionary?",
+    "options": ["Desmond Tutu", "Nelson Mandela", "Steve Biko", "Oliver Tambo"],
+    "correct": 1,
+    "explanation": "Nelson Mandela was a famous anti-apartheid revolutionary."
+  },
+  {
+    "question": "Which ancient civilization built the Parthenon?",
+    "options": ["Romans", "Greeks", "Egyptians", "Persians"],
+    "correct": 1,
+    "explanation": "The Greeks built the Parthenon."
+  },
+  {
+    "question": "Who was the first President of independent Kenya?",
+    "options": ["Jomo Kenyatta", "Daniel arap Moi", "Uhuru Kenyatta", "Mwai Kibaki"],
+    "correct": 0,
+    "explanation": "Jomo Kenyatta was the first President of Kenya."
+  },
+  {
+    "question": "Which treaty ended World War I?",
+    "options": ["Treaty of Paris", "Treaty of Versailles", "Treaty of Tordesillas", "Treaty of Ghent"],
+    "correct": 1,
+    "explanation": "The Treaty of Versailles ended World War I."
+  },
+  {
+    "question": "Who was the famous leader of the Indian independence movement?",
+    "options": ["Jawaharlal Nehru", "Mahatma Gandhi", "Indira Gandhi", "Subhas Chandra Bose"],
+    "correct": 1,
+    "explanation": "Mahatma Gandhi led the Indian independence movement."
+  },
+  {
+    "question": "Which civilization is credited with inventing democracy?",
+    "options": ["Romans", "Greeks", "Egyptians", "Babylonians"],
+    "correct": 1,
+    "explanation": "The Greeks are credited with inventing democracy."
+  },
+  {
+    "question": "Who was the first female pharaoh of Egypt?",
+    "options": ["Cleopatra", "Hatshepsut", "Nefertiti", "Sobekneferu"],
+    "correct": 1,
+    "explanation": "Hatshepsut was the first female pharaoh."
+  },
+  {
+    "question": "Which war was fought between the Allies and Axis powers?",
+    "options": ["World War I", "World War II", "Korean War", "Vietnam War"],
+    "correct": 1,
+    "explanation": "World War II was fought between the Allies and Axis."
+  },
+  {
+    "question": "Who was the famous scientist who developed the theory of relativity?",
+    "options": ["Isaac Newton", "Albert Einstein", "Galileo Galilei", "Marie Curie"],
+    "correct": 1,
+    "explanation": "Albert Einstein developed the theory of relativity."
+  },
+  {
+    "question": "Which ancient civilization used hieroglyphics?",
+    "options": ["Romans", "Greeks", "Egyptians", "Persians"],
+    "correct": 2,
+    "explanation": "The Egyptians used hieroglyphics."
+  },
+  {
+    "question": "Who was the first President of the United States to be impeached?",
+    "options": ["Andrew Johnson", "Richard Nixon", "Bill Clinton", "Donald Trump"],
+    "correct": 0,
+    "explanation": "Andrew Johnson was the first U.S. President to be impeached."
+  }
+]

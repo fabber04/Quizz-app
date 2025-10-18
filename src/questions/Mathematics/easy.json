@@ -1,0 +1,152 @@
+[
+  {
+    "question": "What is 5 + 3?",
+    "options": ["6", "7", "8", "9"],
+    "correct": 2,
+    "explanation": "5 + 3 equals 8."
+  },
+  {
+    "question": "What is the value of 10 - 4?",
+    "options": ["5", "6", "7", "8"],
+    "correct": 1,
+    "explanation": "10 minus 4 is 6."
+  },
+  {
+    "question": "What is 7 x 2?",
+    "options": ["12", "13", "14", "15"],
+    "correct": 2,
+    "explanation": "7 times 2 equals 14."
+  },
+  {
+    "question": "What is 12 divided by 4?",
+    "options": ["2", "3", "4", "5"],
+    "correct": 1,
+    "explanation": "12 divided by 4 is 3."
+  },
+  {
+    "question": "What is the square of 3?",
+    "options": ["6", "9", "12", "15"],
+    "correct": 1,
+    "explanation": "3 squared is 9."
+  },
+  {
+    "question": "What is the next number after 19?",
+    "options": ["18", "19", "20", "21"],
+    "correct": 2,
+    "explanation": "The number after 19 is 20."
+  },
+  {
+    "question": "What is half of 20?",
+    "options": ["5", "8", "10", "12"],
+    "correct": 2,
+    "explanation": "Half of 20 is 10."
+  },
+  {
+    "question": "What is 15 + 5?",
+    "options": ["18", "19", "20", "21"],
+    "correct": 2,
+    "explanation": "15 plus 5 equals 20."
+  },
+  {
+    "question": "What is 9 - 6?",
+    "options": ["2", "3", "4", "5"],
+    "correct": 1,
+    "explanation": "9 minus 6 is 3."
+  },
+  {
+    "question": "What is 4 x 5?",
+    "options": ["15", "18", "20", "25"],
+    "correct": 2,
+    "explanation": "4 times 5 equals 20."
+  },
+  {
+    "question": "What is 100 divided by 10?",
+    "options": ["5", "10", "15", "20"],
+    "correct": 1,
+    "explanation": "100 divided by 10 is 10."
+  },
+  {
+    "question": "What is the value of 2 squared?",
+    "options": ["2", "4", "6", "8"],
+    "correct": 1,
+    "explanation": "2 squared is 4."
+  },
+  {
+    "question": "What is 8 + 7?",
+    "options": ["13", "14", "15", "16"],
+    "correct": 2,
+    "explanation": "8 plus 7 equals 15."
+  },
+  {
+    "question": "What is 14 - 9?",
+    "options": ["3", "4", "5", "6"],
+    "correct": 2,
+    "explanation": "14 minus 9 is 5."
+  },
+  {
+    "question": "What is 3 x 6?",
+    "options": ["15", "16", "17", "18"],
+    "correct": 3,
+    "explanation": "3 times 6 equals 18."
+  },
+  {
+    "question": "What is 18 divided by 3?",
+    "options": ["5", "6", "7", "8"],
+    "correct": 1,
+    "explanation": "18 divided by 3 is 6."
+  },
+  {
+    "question": "What is the value of 7 + 8?",
+    "options": ["13", "14", "15", "16"],
+    "correct": 2,
+    "explanation": "7 plus 8 equals 15."
+  },
+  {
+    "question": "What is 20 - 11?",
+    "options": ["7", "8", "9", "10"],
+    "correct": 2,
+    "explanation": "20 minus 11 is 9."
+  },
+  {
+    "question": "What is 5 x 5?",
+    "options": ["20", "25", "30", "35"],
+    "correct": 1,
+    "explanation": "5 times 5 equals 25."
+  },
+  {
+    "question": "What is 16 divided by 2?",
+    "options": ["6", "7", "8", "9"],
+    "correct": 2,
+    "explanation": "16 divided by 2 is 8."
+  },
+  {
+    "question": "What is the value of 6 squared?",
+    "options": ["12", "24", "36", "48"],
+    "correct": 2,
+    "explanation": "6 squared is 36."
+  },
+  {
+    "question": "What is 11 + 9?",
+    "options": ["18", "19", "20", "21"],
+    "correct": 2,
+    "explanation": "11 plus 9 equals 20."
+  },
+  {
+    "question": "What is 13 - 7?",
+    "options": ["5", "6", "7", "8"],
+    "correct": 1,
+    "explanation": "13 minus 7 is 6."
+  },
+  {
+    "question": "What is 2 x 9?",
+    "options": ["16", "17", "18", "19"],
+    "correct": 2,
+    "explanation": "2 times 9 equals 18."
+  },
+  {
+    "question": "What is 21 divided by 7?",
+    "options": ["2", "3", "4", "5"],
+    "correct": 1,
+    "explanation": "21 divided by 7 is 3."
+  }
+]

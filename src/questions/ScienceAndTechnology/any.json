@@ -1,0 +1,146 @@
+[
+  {
+    "question": "What is the chemical symbol for water?",
+    "options": ["O2", "H2O", "CO2", "HO2"],
+    "correct": 1,
+    "explanation": "H2O is the chemical formula for water."
+  },
+  {
+    "question": "Which planet is known as the Red Planet?",
+    "options": ["Venus", "Mars", "Jupiter", "Mercury"],
+    "correct": 1,
+    "explanation": "Mars is called the Red Planet due to its reddish appearance."
+  },
+  {
+    "question": "Who invented the World Wide Web?",
+    "options": ["Bill Gates", "Tim Berners-Lee", "Steve Jobs", "Mark Zuckerberg"],
+    "correct": 1,
+    "explanation": "Tim Berners-Lee invented the World Wide Web."
+  },
+  {
+    "question": "What is the main function of red blood cells?",
+    "options": ["Fight infection", "Transport oxygen", "Clot blood", "Produce hormones"],
+    "correct": 1,
+    "explanation": "Red blood cells transport oxygen throughout the body."
+  },
+  {
+    "question": "Which gas is most abundant in the Earth's atmosphere?",
+    "options": ["Oxygen", "Nitrogen", "Carbon Dioxide", "Hydrogen"],
+    "correct": 1,
+    "explanation": "Nitrogen makes up about 78% of Earth's atmosphere."
+  },
+  {
+    "question": "What does 'HTTP' stand for?",
+    "options": ["HyperText Transfer Protocol", "HighText Transfer Protocol", "HyperText Transmission Protocol", "Hyper Transfer Text Protocol"],
+    "correct": 0,
+    "explanation": "HTTP stands for HyperText Transfer Protocol."
+  },
+  {
+    "question": "Which organelle is known as the powerhouse of the cell?",
+    "options": ["Nucleus", "Mitochondria", "Ribosome", "Chloroplast"],
+    "correct": 1,
+    "explanation": "Mitochondria are known as the powerhouse of the cell."
+  },
+  {
+    "question": "What is the process by which plants make their own food?",
+    "options": ["Respiration", "Photosynthesis", "Transpiration", "Fermentation"],
+    "correct": 1,
+    "explanation": "Plants use photosynthesis to make food."
+  },
+  {
+    "question": "Who developed the theory of general relativity?",
+    "options": ["Isaac Newton", "Albert Einstein", "Galileo Galilei", "Nikola Tesla"],
+    "correct": 1,
+    "explanation": "Albert Einstein developed the theory of general relativity."
+  },
+  {
+    "question": "What is the largest organ in the human body?",
+    "options": ["Liver", "Skin", "Heart", "Lungs"],
+    "correct": 1,
+    "explanation": "Skin is the largest organ in the human body."
+  },
+  {
+    "question": "Which device is used to measure atmospheric pressure?",
+    "options": ["Thermometer", "Barometer", "Hygrometer", "Anemometer"],
+    "correct": 1,
+    "explanation": "A barometer measures atmospheric pressure."
+  },
+  {
+    "question": "What is the basic unit of a computer's memory?",
+    "options": ["Byte", "Bit", "Kilobyte", "Megabyte"],
+    "correct": 1,
+    "explanation": "A bit is the basic unit of computer memory."
+  },
+  {
+    "question": "Which scientist is known for the laws of motion?",
+    "options": ["Isaac Newton", "Marie Curie", "Charles Darwin", "Stephen Hawking"],
+    "correct": 0,
+    "explanation": "Isaac Newton is known for the laws of motion."
+  },
+  {
+    "question": "What is the boiling point of water at sea level in Celsius?",
+    "options": ["90°C", "100°C", "110°C", "120°C"],
+    "correct": 1,
+    "explanation": "Water boils at 100°C at sea level."
+  },
+  {
+    "question": "What is the main ingredient in traditional glass?",
+    "options": ["Sand", "Clay", "Limestone", "Salt"],
+    "correct": 0,
+    "explanation": "Sand is the main ingredient in traditional glass."
+  },
+  {
+    "question": "Which part of the cell contains genetic material?",
+    "options": ["Cytoplasm", "Nucleus", "Cell membrane", "Mitochondria"],
+    "correct": 1,
+    "explanation": "The nucleus contains the cell's genetic material."
+  },
+  {
+    "question": "What is the SI unit of electric current?",
+    "options": ["Volt", "Ampere", "Ohm", "Watt"],
+    "correct": 1,
+    "explanation": "The SI unit of electric current is the ampere."
+  },
+  {
+    "question": "Which technology is used to make telephone calls over the Internet?",
+    "options": ["VoIP", "Bluetooth", "NFC", "LTE"],
+    "correct": 0,
+    "explanation": "VoIP stands for Voice over Internet Protocol."
+  },
+  {
+    "question": "What is the hardest natural substance on Earth?",
+    "options": ["Gold", "Iron", "Diamond", "Quartz"],
+    "correct": 2,
+    "explanation": "Diamond is the hardest natural substance on Earth."
+  },
+  {
+    "question": "Which vitamin is produced when the skin is exposed to sunlight?",
+    "options": ["Vitamin A", "Vitamin B12", "Vitamin C", "Vitamin D"],
+    "correct": 3,
+    "explanation": "Vitamin D is produced when skin is exposed to sunlight."
+  },
+  {
+    "question": "What is the name of the first artificial Earth satellite?",
+    "options": ["Apollo", "Sputnik 1", "Voyager 1", "Hubble"],
+    "correct": 1,
+    "explanation": "Sputnik 1 was the first artificial Earth satellite."
+  },
+  {
+    "question": "Which programming language is primarily used for web development?",
+    "options": ["Python", "JavaScript", "C++", "Swift"],
+    "correct": 1,
+    "explanation": "JavaScript is primarily used for web development."
+  },
+  {
+    "question": "What is the most common type of star in the Milky Way galaxy?",
+    "options": ["Red dwarf", "White dwarf", "Neutron star", "Supergiant"],
+    "correct": 0,
+    "explanation": "Red dwarfs are the most common type of star in the Milky Way."
+  },
+  {
+    "question": "Which scientist discovered penicillin?",
+    "options": ["Alexander Fleming", "Louis Pasteur", "Gregor Mendel", "Joseph Lister"],
+    "correct": 0,
+    "explanation": "Alexander Fleming discovered penicillin."
+  }
+]

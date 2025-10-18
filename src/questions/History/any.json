@@ -1,0 +1,152 @@
+[
+  {
+    "question": "Who was the first President of the United States?",
+    "options": ["Abraham Lincoln", "George Washington", "Thomas Jefferson", "John Adams"],
+    "correct": 1,
+    "explanation": "George Washington was the first President of the United States."
+  },
+  {
+    "question": "In which country did the ancient pyramids originate?",
+    "options": ["Greece", "Mexico", "Egypt", "China"],
+    "correct": 2,
+    "explanation": "The ancient pyramids originated in Egypt."
+  },
+  {
+    "question": "Who is known as the 'Father of India'?",
+    "options": ["Jawaharlal Nehru", "Mahatma Gandhi", "Subhas Chandra Bose", "Sardar Patel"],
+    "correct": 1,
+    "explanation": "Mahatma Gandhi is known as the 'Father of India'."
+  },
+  {
+    "question": "Which war ended with the Treaty of Versailles?",
+    "options": ["World War I", "World War II", "Civil War", "Vietnam War"],
+    "correct": 0,
+    "explanation": "World War I ended with the Treaty of Versailles."
+  },
+  {
+    "question": "Who discovered America in 1492?",
+    "options": ["Christopher Columbus", "Vasco da Gama", "Ferdinand Magellan", "Marco Polo"],
+    "correct": 0,
+    "explanation": "Christopher Columbus discovered America in 1492."
+  },
+  {
+    "question": "Which city was buried by the eruption of Mount Vesuvius in 79 AD?",
+    "options": ["Athens", "Pompeii", "Rome", "Carthage"],
+    "correct": 1,
+    "explanation": "Pompeii was buried by the eruption of Mount Vesuvius."
+  },
+  {
+    "question": "Who was the famous queen of ancient Egypt?",
+    "options": ["Cleopatra", "Elizabeth I", "Victoria", "Marie Antoinette"],
+    "correct": 0,
+    "explanation": "Cleopatra was a famous queen of ancient Egypt."
+  },
+  {
+    "question": "What was the name of the ship that carried the Pilgrims to America?",
+    "options": ["Santa Maria", "Mayflower", "Endeavour", "Titanic"],
+    "correct": 1,
+    "explanation": "The Mayflower carried the Pilgrims to America."
+  },
+  {
+    "question": "Who was the leader of Nazi Germany during World War II?",
+    "options": ["Joseph Stalin", "Adolf Hitler", "Winston Churchill", "Benito Mussolini"],
+    "correct": 1,
+    "explanation": "Adolf Hitler was the leader of Nazi Germany."
+  },
+  {
+    "question": "Which wall divided Berlin from 1961 to 1989?",
+    "options": ["Great Wall of China", "Berlin Wall", "Hadrian's Wall", "Wailing Wall"],
+    "correct": 1,
+    "explanation": "The Berlin Wall divided Berlin from 1961 to 1989."
+  },
+  {
+    "question": "Who was the first man to walk on the moon?",
+    "options": ["Buzz Aldrin", "Yuri Gagarin", "Neil Armstrong", "Michael Collins"],
+    "correct": 2,
+    "explanation": "Neil Armstrong was the first man to walk on the moon."
+  },
+  {
+    "question": "Which country built the Great Wall?",
+    "options": ["India", "China", "Japan", "Korea"],
+    "correct": 1,
+    "explanation": "The Great Wall was built in China."
+  },
+  {
+    "question": "Who was the famous nurse during the Crimean War?",
+    "options": ["Florence Nightingale", "Marie Curie", "Mother Teresa", "Clara Barton"],
+    "correct": 0,
+    "explanation": "Florence Nightingale was a famous nurse during the Crimean War."
+  },
+  {
+    "question": "Which ancient civilization built Machu Picchu?",
+    "options": ["Aztec", "Maya", "Inca", "Olmec"],
+    "correct": 2,
+    "explanation": "The Inca civilization built Machu Picchu."
+  },
+  {
+    "question": "Who was the British Prime Minister during World War II?",
+    "options": ["Neville Chamberlain", "Winston Churchill", "Margaret Thatcher", "Tony Blair"],
+    "correct": 1,
+    "explanation": "Winston Churchill was the British Prime Minister during World War II."
+  },
+  {
+    "question": "Which country gifted the Statue of Liberty to the USA?",
+    "options": ["France", "England", "Germany", "Italy"],
+    "correct": 0,
+    "explanation": "France gifted the Statue of Liberty to the USA."
+  },
+  {
+    "question": "Who was the first emperor of Rome?",
+    "options": ["Julius Caesar", "Augustus", "Nero", "Caligula"],
+    "correct": 1,
+    "explanation": "Augustus was the first emperor of Rome."
+  },
+  {
+    "question": "What was the name of the first artificial satellite?",
+    "options": ["Apollo", "Sputnik", "Voyager", "Hubble"],
+    "correct": 1,
+    "explanation": "Sputnik was the first artificial satellite."
+  },
+  {
+    "question": "Who wrote the Declaration of Independence?",
+    "options": ["George Washington", "Thomas Jefferson", "Benjamin Franklin", "John Adams"],
+    "correct": 1,
+    "explanation": "Thomas Jefferson wrote the Declaration of Independence."
+  },
+  {
+    "question": "Which ancient city was known for its Hanging Gardens?",
+    "options": ["Babylon", "Athens", "Rome", "Alexandria"],
+    "correct": 0,
+    "explanation": "The Hanging Gardens were in Babylon."
+  },
+  {
+    "question": "Who was the famous Greek philosopher who taught Alexander the Great?",
+    "options": ["Socrates", "Plato", "Aristotle", "Pythagoras"],
+    "correct": 2,
+    "explanation": "Aristotle taught Alexander the Great."
+  },
+  {
+    "question": "Which explorer is known for circumnavigating the globe?",
+    "options": ["Christopher Columbus", "Ferdinand Magellan", "James Cook", "Vasco da Gama"],
+    "correct": 1,
+    "explanation": "Ferdinand Magellan's expedition was the first to circumnavigate the globe."
+  },
+  {
+    "question": "Who was the first woman to win a Nobel Prize?",
+    "options": ["Marie Curie", "Florence Nightingale", "Mother Teresa", "Ada Lovelace"],
+    "correct": 0,
+    "explanation": "Marie Curie was the first woman to win a Nobel Prize."
+  },
+  {
+    "question": "Which empire was ruled by Genghis Khan?",
+    "options": ["Roman Empire", "Mongol Empire", "Ottoman Empire", "British Empire"],
+    "correct": 1,
+    "explanation": "Genghis Khan ruled the Mongol Empire."
+  },
+  {
+    "question": "Who was the first President of South Africa after apartheid?",
+    "options": ["Nelson Mandela", "Jacob Zuma", "Thabo Mbeki", "F.W. de Klerk"],
+    "correct": 0,
+    "explanation": "Nelson Mandela was the first President of South Africa after apartheid."
+  }
+]

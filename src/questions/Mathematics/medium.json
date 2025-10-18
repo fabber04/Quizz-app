@@ -1,0 +1,152 @@
+[
+  {
+    "question": "What is the value of 12 × 12?",
+    "options": ["124", "132", "144", "154"],
+    "correct": 2,
+    "explanation": "12 multiplied by 12 equals 144."
+  },
+  {
+    "question": "What is the square root of 81?",
+    "options": ["7", "8", "9", "10"],
+    "correct": 2,
+    "explanation": "The square root of 81 is 9."
+  },
+  {
+    "question": "What is 15% of 200?",
+    "options": ["20", "25", "30", "35"],
+    "correct": 2,
+    "explanation": "15% of 200 is 30."
+  },
+  {
+    "question": "If x + 5 = 12, what is the value of x?",
+    "options": ["5", "6", "7", "8"],
+    "correct": 2,
+    "explanation": "x = 12 - 5 = 7."
+  },
+  {
+    "question": "What is the next prime number after 17?",
+    "options": ["18", "19", "21", "23"],
+    "correct": 1,
+    "explanation": "19 is the next prime number after 17."
+  },
+  {
+    "question": "What is the value of 3 cubed (3³)?",
+    "options": ["6", "9", "18", "27"],
+    "correct": 3,
+    "explanation": "3 cubed is 3 × 3 × 3 = 27."
+  },
+  {
+    "question": "What is the perimeter of a square with side length 8?",
+    "options": ["16", "24", "32", "64"],
+    "correct": 1,
+    "explanation": "Perimeter = 4 × 8 = 32."
+  },
+  {
+    "question": "What is the value of 100 ÷ 4?",
+    "options": ["20", "24", "25", "30"],
+    "correct": 2,
+    "explanation": "100 divided by 4 is 25."
+  },
+  {
+    "question": "What is the sum of the angles in a triangle?",
+    "options": ["90°", "180°", "270°", "360°"],
+    "correct": 1,
+    "explanation": "The sum of the angles in a triangle is 180°."
+  },
+  {
+    "question": "What is the value of 2x if x = 11?",
+    "options": ["11", "20", "21", "22"],
+    "correct": 3,
+    "explanation": "2 × 11 = 22."
+  },
+  {
+    "question": "What is the area of a rectangle with length 10 and width 5?",
+    "options": ["15", "25", "50", "100"],
+    "correct": 2,
+    "explanation": "Area = 10 × 5 = 50."
+  },
+  {
+    "question": "What is the value of 7²?",
+    "options": ["14", "28", "49", "56"],
+    "correct": 2,
+    "explanation": "7 squared is 49."
+  },
+  {
+    "question": "What is the median of the numbers 3, 7, 9, 12, 15?",
+    "options": ["7", "9", "12", "15"],
+    "correct": 1,
+    "explanation": "The median is 9."
+  },
+  {
+    "question": "What is the value of 5! (5 factorial)?",
+    "options": ["60", "100", "120", "150"],
+    "correct": 2,
+    "explanation": "5! = 5 × 4 × 3 × 2 × 1 = 120."
+  },
+  {
+    "question": "If a triangle has sides of length 3, 4, and 5, what type of triangle is it?",
+    "options": ["Equilateral", "Isosceles", "Right-angled", "Obtuse"],
+    "correct": 2,
+    "explanation": "A triangle with sides 3, 4, 5 is a right-angled triangle."
+  },
+  {
+    "question": "What is the value of 2 to the power of 5?",
+    "options": ["8", "16", "32", "64"],
+    "correct": 2,
+    "explanation": "2⁵ = 32."
+  },
+  {
+    "question": "What is the greatest common divisor (GCD) of 18 and 24?",
+    "options": ["2", "3", "6", "12"],
+    "correct": 2,
+    "explanation": "The GCD of 18 and 24 is 6."
+  },
+  {
+    "question": "What is the value of π (pi) to two decimal places?",
+    "options": ["3.12", "3.14", "3.16", "3.18"],
+    "correct": 1,
+    "explanation": "π to two decimal places is 3.14."
+  },
+  {
+    "question": "What is the value of 9 × 8?",
+    "options": ["64", "72", "81", "88"],
+    "correct": 1,
+    "explanation": "9 × 8 = 72."
+  },
+  {
+    "question": "What is the smallest prime number?",
+    "options": ["0", "1", "2", "3"],
+    "correct": 2,
+    "explanation": "2 is the smallest prime number."
+  },
+  {
+    "question": "What is the value of 1000 minus 333?",
+    "options": ["667", "677", "777", "888"],
+    "correct": 0,
+    "explanation": "1000 - 333 = 667."
+  },
+  {
+    "question": "What is the value of 4³?",
+    "options": ["8", "16", "32", "64"],
+    "correct": 3,
+    "explanation": "4³ = 4 × 4 × 4 = 64."
+  },
+  {
+    "question": "What is the value of 0 divided by any nonzero number?",
+    "options": ["0", "1", "Undefined", "Infinity"],
+    "correct": 0,
+    "explanation": "0 divided by any nonzero number is 0."
+  },
+  {
+    "question": "What is the next number in the sequence: 2, 4, 8, 16, ...?",
+    "options": ["18", "24", "32", "36"],
+    "correct": 2,
+    "explanation": "The sequence doubles each time, so the next is 32."
+  },
+  {
+    "question": "What is the value of 6 × 7?",
+    "options": ["36", "42", "48", "56"],
+    "correct": 1,
+    "explanation": "6 × 7 = 42."
+  }
+]

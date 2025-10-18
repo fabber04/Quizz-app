@@ -1,0 +1,152 @@
+[
+  {
+    "question": "What is the name of the process by which plants lose water vapor through their leaves?",
+    "options": ["Photosynthesis", "Transpiration", "Respiration", "Fermentation"],
+    "correct": 1,
+    "explanation": "Transpiration is the process by which plants lose water vapor through their leaves."
+  },
+  {
+    "question": "Which physicist is known for the uncertainty principle?",
+    "options": ["Albert Einstein", "Niels Bohr", "Werner Heisenberg", "Max Planck"],
+    "correct": 2,
+    "explanation": "Werner Heisenberg formulated the uncertainty principle."
+  },
+  {
+    "question": "What is the most abundant element in the Earth's crust?",
+    "options": ["Oxygen", "Silicon", "Aluminum", "Iron"],
+    "correct": 0,
+    "explanation": "Oxygen is the most abundant element in the Earth's crust."
+  },
+  {
+    "question": "Which scientist first proposed the heliocentric model of the solar system?",
+    "options": ["Galileo Galilei", "Nicolaus Copernicus", "Johannes Kepler", "Isaac Newton"],
+    "correct": 1,
+    "explanation": "Nicolaus Copernicus proposed the heliocentric model."
+  },
+  {
+    "question": "What is the SI unit of luminous intensity?",
+    "options": ["Candela", "Lumen", "Lux", "Watt"],
+    "correct": 0,
+    "explanation": "Candela is the SI unit of luminous intensity."
+  },
+  {
+    "question": "Which part of the brain is responsible for regulating balance and coordination?",
+    "options": ["Cerebrum", "Cerebellum", "Medulla", "Thalamus"],
+    "correct": 1,
+    "explanation": "The cerebellum regulates balance and coordination."
+  },
+  {
+    "question": "What is the name of the largest moon of Saturn?",
+    "options": ["Europa", "Titan", "Ganymede", "Callisto"],
+    "correct": 1,
+    "explanation": "Titan is the largest moon of Saturn."
+  },
+  {
+    "question": "Which law states that the volume of a gas is inversely proportional to its pressure?",
+    "options": ["Boyle's Law", "Charles's Law", "Avogadro's Law", "Dalton's Law"],
+    "correct": 0,
+    "explanation": "Boyle's Law states that volume is inversely proportional to pressure."
+  },
+  {
+    "question": "What is the main function of ribosomes in a cell?",
+    "options": ["Energy production", "Protein synthesis", "DNA replication", "Cell division"],
+    "correct": 1,
+    "explanation": "Ribosomes are responsible for protein synthesis."
+  },
+  {
+    "question": "Which scientist discovered the neutron?",
+    "options": ["James Chadwick", "Ernest Rutherford", "Marie Curie", "Niels Bohr"],
+    "correct": 0,
+    "explanation": "James Chadwick discovered the neutron."
+  },
+  {
+    "question": "What is the name of the effect that causes the apparent deflection of moving objects due to Earth's rotation?",
+    "options": ["Doppler Effect", "Coriolis Effect", "Greenhouse Effect", "Photoelectric Effect"],
+    "correct": 1,
+    "explanation": "The Coriolis Effect causes apparent deflection due to Earth's rotation."
+  },
+  {
+    "question": "Which vitamin is essential for blood clotting?",
+    "options": ["Vitamin A", "Vitamin C", "Vitamin K", "Vitamin D"],
+    "correct": 2,
+    "explanation": "Vitamin K is essential for blood clotting."
+  },
+  {
+    "question": "What is the name of the first spacecraft to reach interstellar space?",
+    "options": ["Voyager 1", "Pioneer 10", "Apollo 11", "Hubble"],
+    "correct": 0,
+    "explanation": "Voyager 1 is the first spacecraft to reach interstellar space."
+  },
+  {
+    "question": "Which chemical element has the highest melting point?",
+    "options": ["Carbon", "Tungsten", "Iron", "Platinum"],
+    "correct": 1,
+    "explanation": "Tungsten has the highest melting point of all elements."
+  },
+  {
+    "question": "What is the name of the process by which DNA is copied into RNA?",
+    "options": ["Translation", "Transcription", "Replication", "Mutation"],
+    "correct": 1,
+    "explanation": "Transcription is the process of copying DNA into RNA."
+  },
+  {
+    "question": "Which scientist developed the first successful polio vaccine?",
+    "options": ["Louis Pasteur", "Jonas Salk", "Alexander Fleming", "Edward Jenner"],
+    "correct": 1,
+    "explanation": "Jonas Salk developed the first successful polio vaccine."
+  },
+  {
+    "question": "What is the name of the phenomenon where light bends as it passes through different mediums?",
+    "options": ["Reflection", "Refraction", "Diffraction", "Dispersion"],
+    "correct": 1,
+    "explanation": "Refraction is the bending of light as it passes through different mediums."
+  },
+  {
+    "question": "Which subatomic particle has no electric charge?",
+    "options": ["Proton", "Electron", "Neutron", "Positron"],
+    "correct": 2,
+    "explanation": "Neutrons have no electric charge."
+  },
+  {
+    "question": "What is the name of the largest volcano in the solar system?",
+    "options": ["Mount Everest", "Mauna Loa", "Olympus Mons", "Vesuvius"],
+    "correct": 2,
+    "explanation": "Olympus Mons on Mars is the largest volcano in the solar system."
+  },
+  {
+    "question": "Which branch of science deals with the study of fungi?",
+    "options": ["Botany", "Zoology", "Mycology", "Ecology"],
+    "correct": 2,
+    "explanation": "Mycology is the study of fungi."
+  },
+  {
+    "question": "What is the name of the process by which green plants convert carbon dioxide and water into glucose and oxygen?",
+    "options": ["Respiration", "Photosynthesis", "Fermentation", "Transpiration"],
+    "correct": 1,
+    "explanation": "Photosynthesis converts carbon dioxide and water into glucose and oxygen."
+  },
+  {
+    "question": "Which scientist is known for the discovery of radioactivity?",
+    "options": ["Marie Curie", "Isaac Newton", "Albert Einstein", "James Clerk Maxwell"],
+    "correct": 0,
+    "explanation": "Marie Curie is known for her work on radioactivity."
+  },
+  {
+    "question": "What is the name of the device used to measure earthquake waves?",
+    "options": ["Barometer", "Seismograph", "Anemometer", "Hygrometer"],
+    "correct": 1,
+    "explanation": "A seismograph measures earthquake waves."
+  },
+  {
+    "question": "Which planet has the shortest day in the solar system?",
+    "options": ["Earth", "Jupiter", "Mars", "Venus"],
+    "correct": 1,
+    "explanation": "Jupiter has the shortest day, rotating once every 10 hours."
+  },
+  {
+    "question": "What is the name of the process by which cells divide to produce gametes?",
+    "options": ["Mitosis", "Meiosis", "Binary fission", "Budding"],
+    "correct": 1,
+    "explanation": "Meiosis is the process by which gametes are produced."
+  }
+]

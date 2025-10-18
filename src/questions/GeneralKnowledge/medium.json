@@ -1,0 +1,152 @@
+[
+  {
+    "question": "Which country is known as the Land of the Rising Sun?",
+    "options": ["China", "Japan", "Thailand", "South Korea"],
+    "correct": 1,
+    "explanation": "Japan is known as the Land of the Rising Sun."
+  },
+  {
+    "question": "What is the smallest prime number?",
+    "options": ["0", "1", "2", "3"],
+    "correct": 2,
+    "explanation": "2 is the smallest prime number."
+  },
+  {
+    "question": "Who wrote the play 'Romeo and Juliet'?",
+    "options": ["Charles Dickens", "William Shakespeare", "Jane Austen", "Mark Twain"],
+    "correct": 1,
+    "explanation": "William Shakespeare wrote 'Romeo and Juliet'."
+  },
+  {
+    "question": "Which gas do plants absorb from the atmosphere?",
+    "options": ["Oxygen", "Carbon Dioxide", "Nitrogen", "Hydrogen"],
+    "correct": 1,
+    "explanation": "Plants absorb carbon dioxide."
+  },
+  {
+    "question": "What is the capital of Australia?",
+    "options": ["Sydney", "Melbourne", "Canberra", "Perth"],
+    "correct": 2,
+    "explanation": "Canberra is the capital of Australia."
+  },
+  {
+    "question": "Which element has the chemical symbol 'O'?",
+    "options": ["Gold", "Oxygen", "Osmium", "Oxide"],
+    "correct": 1,
+    "explanation": "Oxygen has the symbol 'O'."
+  },
+  {
+    "question": "How many players are there in a soccer team (on the field)?",
+    "options": ["9", "10", "11", "12"],
+    "correct": 2,
+    "explanation": "There are 11 players in a soccer team."
+  },
+  {
+    "question": "What is the hardest natural substance on Earth?",
+    "options": ["Gold", "Iron", "Diamond", "Quartz"],
+    "correct": 2,
+    "explanation": "Diamond is the hardest natural substance."
+  },
+  {
+    "question": "Which continent is the Sahara Desert located on?",
+    "options": ["Asia", "Africa", "Australia", "Europe"],
+    "correct": 1,
+    "explanation": "The Sahara Desert is in Africa."
+  },
+  {
+    "question": "Who painted the Mona Lisa?",
+    "options": ["Vincent van Gogh", "Pablo Picasso", "Leonardo da Vinci", "Claude Monet"],
+    "correct": 2,
+    "explanation": "Leonardo da Vinci painted the Mona Lisa."
+  },
+  {
+    "question": "What is the boiling point of water in Celsius?",
+    "options": ["90°C", "100°C", "110°C", "120°C"],
+    "correct": 1,
+    "explanation": "Water boils at 100°C."
+  },
+  {
+    "question": "Which language is the most spoken in the world?",
+    "options": ["English", "Spanish", "Mandarin", "Hindi"],
+    "correct": 2,
+    "explanation": "Mandarin is the most spoken language."
+  },
+  {
+    "question": "What is the largest desert in the world?",
+    "options": ["Gobi", "Sahara", "Antarctic", "Kalahari"],
+    "correct": 2,
+    "explanation": "The Antarctic Desert is the largest."
+  },
+  {
+    "question": "Which country hosted the 2016 Summer Olympics?",
+    "options": ["China", "Brazil", "Russia", "UK"],
+    "correct": 1,
+    "explanation": "Brazil hosted the 2016 Summer Olympics."
+  },
+  {
+    "question": "What is the main ingredient in guacamole?",
+    "options": ["Tomato", "Avocado", "Onion", "Pepper"],
+    "correct": 1,
+    "explanation": "Avocado is the main ingredient in guacamole."
+  },
+  {
+    "question": "Which planet is known as the Red Planet?",
+    "options": ["Venus", "Mars", "Jupiter", "Saturn"],
+    "correct": 1,
+    "explanation": "Mars is known as the Red Planet."
+  },
+  {
+    "question": "Who invented the telephone?",
+    "options": ["Thomas Edison", "Alexander Graham Bell", "Nikola Tesla", "Isaac Newton"],
+    "correct": 1,
+    "explanation": "Alexander Graham Bell invented the telephone."
+  },
+  {
+    "question": "What is the largest bone in the human body?",
+    "options": ["Femur", "Tibia", "Humerus", "Skull"],
+    "correct": 0,
+    "explanation": "The femur is the largest bone."
+  },
+  {
+    "question": "Which country is known as the Land of the Maple Leaf?",
+    "options": ["USA", "Canada", "Australia", "Sweden"],
+    "correct": 1,
+    "explanation": "Canada is known as the Land of the Maple Leaf."
+  },
+  {
+    "question": "What is the chemical formula for table salt?",
+    "options": ["NaCl", "KCl", "H2O", "CO2"],
+    "correct": 0,
+    "explanation": "Table salt is NaCl."
+  },
+  {
+    "question": "Which river is the longest in the world?",
+    "options": ["Amazon", "Nile", "Yangtze", "Mississippi"],
+    "correct": 1,
+    "explanation": "The Nile is the longest river."
+  },
+  {
+    "question": "What is the largest island in the world?",
+    "options": ["Greenland", "Australia", "Borneo", "Madagascar"],
+    "correct": 0,
+    "explanation": "Greenland is the largest island."
+  },
+  {
+    "question": "Which organ pumps blood through the body?",
+    "options": ["Liver", "Heart", "Lungs", "Kidneys"],
+    "correct": 1,
+    "explanation": "The heart pumps blood."
+  },
+  {
+    "question": "Who is the author of 'Harry Potter'?",
+    "options": ["J.K. Rowling", "J.R.R. Tolkien", "Stephen King", "Roald Dahl"],
+    "correct": 0,
+    "explanation": "J.K. Rowling wrote 'Harry Potter'."
+  },
+  {
+    "question": "Which instrument measures temperature?",
+    "options": ["Barometer", "Thermometer", "Hygrometer", "Altimeter"],
+    "correct": 1,
+    "explanation": "A thermometer measures temperature."
+  }
+]

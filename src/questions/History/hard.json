@@ -1,0 +1,152 @@
+[
+  {
+    "question": "Who was the last emperor of the Western Roman Empire?",
+    "options": ["Augustus", "Romulus Augustulus", "Constantine", "Nero"],
+    "correct": 1,
+    "explanation": "Romulus Augustulus was the last emperor of the Western Roman Empire."
+  },
+  {
+    "question": "Which treaty ended the Thirty Years' War in 1648?",
+    "options": ["Treaty of Versailles", "Treaty of Westphalia", "Treaty of Paris", "Treaty of Utrecht"],
+    "correct": 1,
+    "explanation": "The Treaty of Westphalia ended the Thirty Years' War."
+  },
+  {
+    "question": "Who was the first emperor of the Holy Roman Empire?",
+    "options": ["Charlemagne", "Otto I", "Frederick Barbarossa", "Henry IV"],
+    "correct": 0,
+    "explanation": "Charlemagne was crowned the first emperor of the Holy Roman Empire."
+  },
+  {
+    "question": "Which civilization built the city of Tenochtitlan?",
+    "options": ["Aztec", "Maya", "Inca", "Olmec"],
+    "correct": 0,
+    "explanation": "The Aztecs built Tenochtitlan."
+  },
+  {
+    "question": "Who was the leader of the Haitian Revolution?",
+    "options": ["Toussaint Louverture", "Jean-Jacques Dessalines", "Henri Christophe", "François Duvalier"],
+    "correct": 0,
+    "explanation": "Toussaint Louverture led the Haitian Revolution."
+  },
+  {
+    "question": "Which dynasty ruled China during the construction of the Forbidden City?",
+    "options": ["Ming", "Qing", "Han", "Tang"],
+    "correct": 0,
+    "explanation": "The Ming dynasty built the Forbidden City."
+  },
+  {
+    "question": "Who was the first female ruler of Russia?",
+    "options": ["Catherine the Great", "Elizabeth of Russia", "Anna of Russia", "Olga of Kiev"],
+    "correct": 1,
+    "explanation": "Elizabeth of Russia was the first female ruler."
+  },
+  {
+    "question": "Which battle marked the turning point of the American Revolutionary War?",
+    "options": ["Battle of Yorktown", "Battle of Saratoga", "Battle of Bunker Hill", "Battle of Lexington"],
+    "correct": 1,
+    "explanation": "The Battle of Saratoga was the turning point."
+  },
+  {
+    "question": "Who was the founder of the Mali Empire?",
+    "options": ["Mansa Musa", "Sundiata Keita", "Askia Muhammad", "Sonni Ali"],
+    "correct": 1,
+    "explanation": "Sundiata Keita founded the Mali Empire."
+  },
+  {
+    "question": "Which English king signed the Magna Carta?",
+    "options": ["Henry II", "Richard I", "John", "Edward I"],
+    "correct": 2,
+    "explanation": "King John signed the Magna Carta in 1215."
+  },
+  {
+    "question": "Who was the first President of independent Ghana?",
+    "options": ["Kwame Nkrumah", "Jerry Rawlings", "John Kufuor", "John Atta Mills"],
+    "correct": 0,
+    "explanation": "Kwame Nkrumah was the first President of Ghana."
+  },
+  {
+    "question": "Which explorer led the first expedition to circumnavigate the globe?",
+    "options": ["Christopher Columbus", "Ferdinand Magellan", "James Cook", "Vasco da Gama"],
+    "correct": 1,
+    "explanation": "Ferdinand Magellan's expedition was the first to circumnavigate the globe."
+  },
+  {
+    "question": "Who was the architect of the Suez Canal?",
+    "options": ["Gustave Eiffel", "Ferdinand de Lesseps", "Isambard Kingdom Brunel", "John Smeaton"],
+    "correct": 1,
+    "explanation": "Ferdinand de Lesseps was the architect of the Suez Canal."
+  },
+  {
+    "question": "Which battle ended Napoleon's rule as Emperor of France?",
+    "options": ["Battle of Leipzig", "Battle of Waterloo", "Battle of Austerlitz", "Battle of Trafalgar"],
+    "correct": 1,
+    "explanation": "The Battle of Waterloo ended Napoleon's rule."
+  },
+  {
+    "question": "Who was the first Prime Minister of independent India?",
+    "options": ["Jawaharlal Nehru", "Mahatma Gandhi", "Indira Gandhi", "Rajendra Prasad"],
+    "correct": 0,
+    "explanation": "Jawaharlal Nehru was the first Prime Minister of India."
+  },
+  {
+    "question": "Which civilization is credited with inventing the wheel?",
+    "options": ["Sumerians", "Egyptians", "Greeks", "Romans"],
+    "correct": 0,
+    "explanation": "The Sumerians are credited with inventing the wheel."
+  },
+  {
+    "question": "Who was the leader of the Bolshevik Revolution?",
+    "options": ["Joseph Stalin", "Vladimir Lenin", "Leon Trotsky", "Nicholas II"],
+    "correct": 1,
+    "explanation": "Vladimir Lenin led the Bolshevik Revolution."
+  },
+  {
+    "question": "Which treaty ended the Russo-Japanese War?",
+    "options": ["Treaty of Portsmouth", "Treaty of Paris", "Treaty of Versailles", "Treaty of Tordesillas"],
+    "correct": 0,
+    "explanation": "The Treaty of Portsmouth ended the Russo-Japanese War."
+  },
+  {
+    "question": "Who was the first President of Turkey?",
+    "options": ["Ismet Inönü", "Recep Tayyip Erdoğan", "Mustafa Kemal Atatürk", "Abdullah Gül"],
+    "correct": 2,
+    "explanation": "Mustafa Kemal Atatürk was the first President of Turkey."
+  },
+  {
+    "question": "Which civilization built the city of Petra?",
+    "options": ["Babylonians", "Nabataeans", "Romans", "Persians"],
+    "correct": 1,
+    "explanation": "The Nabataeans built Petra."
+  },
+  {
+    "question": "Who was the first female Prime Minister of Israel?",
+    "options": ["Golda Meir", "Tzipi Livni", "Shulamit Aloni", "Dalia Itzik"],
+    "correct": 0,
+    "explanation": "Golda Meir was the first female Prime Minister of Israel."
+  },
+  {
+    "question": "Which dynasty built the Taj Mahal?",
+    "options": ["Mughal", "Maurya", "Gupta", "Chola"],
+    "correct": 0,
+    "explanation": "The Mughal dynasty built the Taj Mahal."
+  },
+  {
+    "question": "Who was the first President of the United States to resign from office?",
+    "options": ["Richard Nixon", "Andrew Johnson", "Bill Clinton", "Herbert Hoover"],
+    "correct": 0,
+    "explanation": "Richard Nixon was the first U.S. President to resign."
+  },
+  {
+    "question": "Which civilization developed the concept of zero?",
+    "options": ["Romans", "Greeks", "Indians", "Chinese"],
+    "correct": 2,
+    "explanation": "The concept of zero was developed in India."
+  },
+  {
+    "question": "Who was the first female pharaoh to rule Egypt alone?",
+    "options": ["Cleopatra", "Hatshepsut", "Nefertiti", "Sobekneferu"],
+    "correct": 3,
+    "explanation": "Sobekneferu was the first female pharaoh to rule Egypt alone."
+  }
+]

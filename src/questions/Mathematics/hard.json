@@ -1,0 +1,152 @@
+[
+  {
+    "question": "What is the value of the determinant of the matrix [[2, 3], [4, 5]]?",
+    "options": ["-2", "2", "-7", "7"],
+    "correct": 2,
+    "explanation": "Determinant = (2*5) - (3*4) = 10 - 12 = -2."
+  },
+  {
+    "question": "What is the derivative of sin(x) with respect to x?",
+    "options": ["cos(x)", "-cos(x)", "sin(x)", "-sin(x)"],
+    "correct": 0,
+    "explanation": "The derivative of sin(x) is cos(x)."
+  },
+  {
+    "question": "What is the sum of the infinite geometric series 3 + 1.5 + 0.75 + ...?",
+    "options": ["5", "6", "7", "8"],
+    "correct": 1,
+    "explanation": "Sum = a / (1 - r) = 3 / (1 - 0.5) = 6."
+  },
+  {
+    "question": "If f(x) = x^3 - 3x^2 + 2x, what are the critical points?",
+    "options": ["x = 0, 1, 2", "x = 1, 2", "x = 0, 2", "x = 1, 3"],
+    "correct": 1,
+    "explanation": "Set derivative 3x^2 - 6x + 2 = 0; solutions are x = 1, 2."
+  },
+  {
+    "question": "What is the value of the integral ∫₀¹ x^2 dx?",
+    "options": ["1/2", "1/3", "1/4", "1"],
+    "correct": 1,
+    "explanation": "∫₀¹ x^2 dx = [x^3/3]₀¹ = 1/3."
+  },
+  {
+    "question": "What is the 10th term of the Fibonacci sequence?",
+    "options": ["34", "55", "89", "144"],
+    "correct": 1,
+    "explanation": "The 10th term is 55."
+  },
+  {
+    "question": "What is the solution to the equation 2^x = 32?",
+    "options": ["3", "4", "5", "6"],
+    "correct": 2,
+    "explanation": "2^5 = 32, so x = 5."
+  },
+  {
+    "question": "What is the sum of the interior angles of a decagon?",
+    "options": ["1440°", "1620°", "1800°", "1260°"],
+    "correct": 0,
+    "explanation": "Sum = (10-2) × 180° = 1440°."
+  },
+  {
+    "question": "What is the value of log₂(64)?",
+    "options": ["4", "5", "6", "8"],
+    "correct": 2,
+    "explanation": "2^6 = 64, so log₂(64) = 6."
+  },
+  {
+    "question": "What is the probability of getting exactly two heads in three coin tosses?",
+    "options": ["1/8", "1/4", "3/8", "1/2"],
+    "correct": 2,
+    "explanation": "There are 3 ways: HHT, HTH, THH. Probability = 3/8."
+  },
+  {
+    "question": "What is the value of the binomial coefficient C(7, 3)?",
+    "options": ["21", "28", "35", "42"],
+    "correct": 2,
+    "explanation": "C(7,3) = 35."
+  },
+  {
+    "question": "What is the remainder when 1234 is divided by 11?",
+    "options": ["1", "2", "3", "4"],
+    "correct": 0,
+    "explanation": "1234 ÷ 11 = 112 remainder 2."
+  },
+  {
+    "question": "What is the value of tan(45°)?",
+    "options": ["0", "1", "√2", "∞"],
+    "correct": 1,
+    "explanation": "tan(45°) = 1."
+  },
+  {
+    "question": "What is the sum of the first 20 positive integers?",
+    "options": ["190", "200", "210", "220"],
+    "correct": 2,
+    "explanation": "Sum = n(n+1)/2 = 20×21/2 = 210."
+  },
+  {
+    "question": "What is the solution to the quadratic equation x^2 - 5x + 6 = 0?",
+    "options": ["x = 1, 6", "x = 2, 3", "x = 3, 4", "x = 2, 5"],
+    "correct": 1,
+    "explanation": "x^2 - 5x + 6 = (x-2)(x-3), so x = 2, 3."
+  },
+  {
+    "question": "What is the value of e^0?",
+    "options": ["0", "1", "e", "Undefined"],
+    "correct": 1,
+    "explanation": "e^0 = 1."
+  },
+  {
+    "question": "What is the sum of the roots of the equation x^2 + 7x + 12 = 0?",
+    "options": ["-7", "7", "-12", "12"],
+    "correct": 0,
+    "explanation": "Sum of roots = -b/a = -7/1 = -7."
+  },
+  {
+    "question": "What is the value of cos(0°)?",
+    "options": ["0", "1", "-1", "Undefined"],
+    "correct": 1,
+    "explanation": "cos(0°) = 1."
+  },
+  {
+    "question": "What is the value of the expression (2 + 3i)(2 - 3i)?",
+    "options": ["4", "13", "5", "-5"],
+    "correct": 1,
+    "explanation": "(2 + 3i)(2 - 3i) = 4 + 9 = 13."
+  },
+  {
+    "question": "What is the area of a circle with radius 7?",
+    "options": ["49π", "14π", "21π", "28π"],
+    "correct": 0,
+    "explanation": "Area = πr^2 = π×49 = 49π."
+  },
+  {
+    "question": "What is the value of 0 factorial (0!)?",
+    "options": ["0", "1", "Undefined", "Infinity"],
+    "correct": 1,
+    "explanation": "0! is defined as 1."
+  },
+  {
+    "question": "What is the solution to the equation ln(x) = 0?",
+    "options": ["0", "1", "e", "Undefined"],
+    "correct": 1,
+    "explanation": "ln(1) = 0, so x = 1."
+  },
+  {
+    "question": "What is the value of the sum 1 + 1/2 + 1/4 + 1/8 + ... to infinity?",
+    "options": ["1", "2", "3", "4"],
+    "correct": 1,
+    "explanation": "Sum = 1/(1 - 1/2) = 2."
+  },
+  {
+    "question": "What is the value of the greatest integer less than or equal to π?",
+    "options": ["2", "3", "4", "5"],
+    "correct": 1,
+    "explanation": "The greatest integer less than or equal to π is 3."
+  },
+  {
+    "question": "What is the value of the limit limₓ→0 (sin x)/x?",
+    "options": ["0", "1", "∞", "Undefined"],
+    "correct": 1,
+    "explanation": "The limit is 1."
+  }
+]

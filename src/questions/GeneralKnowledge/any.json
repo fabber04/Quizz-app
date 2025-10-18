@@ -1,0 +1,152 @@
+[
+  {
+    "question": "What is the capital city of France?",
+    "options": ["London", "Berlin", "Paris", "Madrid"],
+    "correct": 2,
+    "explanation": "Paris is the capital city of France."
+  },
+  {
+    "question": "How many continents are there on Earth?",
+    "options": ["5", "6", "7", "8"],
+    "correct": 2,
+    "explanation": "There are 7 continents on Earth."
+  },
+  {
+    "question": "Which animal is known as the King of the Jungle?",
+    "options": ["Tiger", "Lion", "Elephant", "Leopard"],
+    "correct": 1,
+    "explanation": "The lion is known as the King of the Jungle."
+  },
+  {
+    "question": "What is the largest planet in our solar system?",
+    "options": ["Earth", "Mars", "Jupiter", "Saturn"],
+    "correct": 2,
+    "explanation": "Jupiter is the largest planet in our solar system."
+  },
+  {
+    "question": "Which color do you get by mixing red and white?",
+    "options": ["Pink", "Purple", "Orange", "Brown"],
+    "correct": 0,
+    "explanation": "Red and white make pink."
+  },
+  {
+    "question": "What is the main ingredient in bread?",
+    "options": ["Rice", "Flour", "Sugar", "Salt"],
+    "correct": 1,
+    "explanation": "Flour is the main ingredient in bread."
+  },
+  {
+    "question": "Which ocean is the largest?",
+    "options": ["Atlantic", "Indian", "Pacific", "Arctic"],
+    "correct": 2,
+    "explanation": "The Pacific Ocean is the largest."
+  },
+  {
+    "question": "How many days are there in a leap year?",
+    "options": ["364", "365", "366", "367"],
+    "correct": 2,
+    "explanation": "A leap year has 366 days."
+  },
+  {
+    "question": "Which fruit is yellow and curved?",
+    "options": ["Apple", "Banana", "Grape", "Orange"],
+    "correct": 1,
+    "explanation": "Bananas are yellow and curved."
+  },
+  {
+    "question": "What do bees make?",
+    "options": ["Milk", "Honey", "Bread", "Cheese"],
+    "correct": 1,
+    "explanation": "Bees make honey."
+  },
+  {
+    "question": "Which country is famous for pizza and pasta?",
+    "options": ["France", "Italy", "Spain", "Greece"],
+    "correct": 1,
+    "explanation": "Italy is famous for pizza and pasta."
+  },
+  {
+    "question": "What is the freezing point of water in Celsius?",
+    "options": ["0°C", "32°C", "100°C", "212°C"],
+    "correct": 0,
+    "explanation": "Water freezes at 0°C."
+  },
+  {
+    "question": "Which bird is known for its colorful tail?",
+    "options": ["Crow", "Peacock", "Sparrow", "Pigeon"],
+    "correct": 1,
+    "explanation": "The peacock is known for its colorful tail."
+  },
+  {
+    "question": "How many legs does a spider have?",
+    "options": ["6", "8", "10", "12"],
+    "correct": 1,
+    "explanation": "Spiders have 8 legs."
+  },
+  {
+    "question": "What is the tallest animal in the world?",
+    "options": ["Elephant", "Giraffe", "Horse", "Camel"],
+    "correct": 1,
+    "explanation": "The giraffe is the tallest animal."
+  },
+  {
+    "question": "Which month comes after September?",
+    "options": ["October", "November", "August", "July"],
+    "correct": 0,
+    "explanation": "October comes after September."
+  },
+  {
+    "question": "What is the name of the fairy in Peter Pan?",
+    "options": ["Cinderella", "Tinker Bell", "Ariel", "Belle"],
+    "correct": 1,
+    "explanation": "Tinker Bell is the fairy in Peter Pan."
+  },
+  {
+    "question": "Which instrument has black and white keys?",
+    "options": ["Guitar", "Piano", "Drum", "Violin"],
+    "correct": 1,
+    "explanation": "A piano has black and white keys."
+  },
+  {
+    "question": "What is the opposite of 'hot'?",
+    "options": ["Warm", "Cold", "Cool", "Mild"],
+    "correct": 1,
+    "explanation": "The opposite of hot is cold."
+  },
+  {
+    "question": "Which shape has three sides?",
+    "options": ["Square", "Triangle", "Circle", "Rectangle"],
+    "correct": 1,
+    "explanation": "A triangle has three sides."
+  },
+  {
+    "question": "What do you call a baby dog?",
+    "options": ["Kitten", "Puppy", "Cub", "Calf"],
+    "correct": 1,
+    "explanation": "A baby dog is called a puppy."
+  },
+  {
+    "question": "Which planet is closest to the Sun?",
+    "options": ["Venus", "Earth", "Mercury", "Mars"],
+    "correct": 2,
+    "explanation": "Mercury is closest to the Sun."
+  },
+  {
+    "question": "What is the largest mammal?",
+    "options": ["Elephant", "Blue Whale", "Giraffe", "Hippopotamus"],
+    "correct": 1,
+    "explanation": "The blue whale is the largest mammal."
+  },
+  {
+    "question": "Which color is made by mixing blue and yellow?",
+    "options": ["Green", "Purple", "Orange", "Brown"],
+    "correct": 0,
+    "explanation": "Blue and yellow make green."
+  },
+  {
+    "question": "What is the name of our galaxy?",
+    "options": ["Andromeda", "Milky Way", "Orion", "Pegasus"],
+    "correct": 1,
+    "explanation": "Our galaxy is called the Milky Way."
+  }
+]

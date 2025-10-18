@@ -1,0 +1,152 @@
+[
+  {
+    "question": "Which scientist is known for the laws of planetary motion?",
+    "options": ["Isaac Newton", "Johannes Kepler", "Galileo Galilei", "Nicolaus Copernicus"],
+    "correct": 1,
+    "explanation": "Johannes Kepler formulated the laws of planetary motion."
+  },
+  {
+    "question": "What is the capital city of Mongolia?",
+    "options": ["Astana", "Ulaanbaatar", "Tashkent", "Bishkek"],
+    "correct": 1,
+    "explanation": "Ulaanbaatar is the capital of Mongolia."
+  },
+  {
+    "question": "Which element has the highest electrical conductivity?",
+    "options": ["Gold", "Copper", "Silver", "Aluminum"],
+    "correct": 2,
+    "explanation": "Silver has the highest electrical conductivity."
+  },
+  {
+    "question": "Who was the first woman in space?",
+    "options": ["Valentina Tereshkova", "Sally Ride", "Mae Jemison", "Eileen Collins"],
+    "correct": 0,
+    "explanation": "Valentina Tereshkova was the first woman in space."
+  },
+  {
+    "question": "Which country has the most official languages?",
+    "options": ["India", "South Africa", "Switzerland", "Canada"],
+    "correct": 1,
+    "explanation": "South Africa has 11 official languages."
+  },
+  {
+    "question": "What is the smallest country in the world by area?",
+    "options": ["Monaco", "San Marino", "Vatican City", "Liechtenstein"],
+    "correct": 2,
+    "explanation": "Vatican City is the smallest country by area."
+  },
+  {
+    "question": "Which is the only continent without reptiles or snakes?",
+    "options": ["Europe", "Antarctica", "Australia", "North America"],
+    "correct": 1,
+    "explanation": "Antarctica has no reptiles or snakes."
+  },
+  {
+    "question": "Who developed the polio vaccine?",
+    "options": ["Louis Pasteur", "Edward Jenner", "Jonas Salk", "Alexander Fleming"],
+    "correct": 2,
+    "explanation": "Jonas Salk developed the polio vaccine."
+  },
+  {
+    "question": "What is the rarest blood type in humans?",
+    "options": ["A", "B", "AB negative", "O positive"],
+    "correct": 2,
+    "explanation": "AB negative is the rarest blood type."
+  },
+  {
+    "question": "Which is the longest river in Asia?",
+    "options": ["Yangtze", "Yellow", "Mekong", "Ganges"],
+    "correct": 0,
+    "explanation": "The Yangtze is the longest river in Asia."
+  },
+  {
+    "question": "Who was the first person to reach the South Pole?",
+    "options": ["Robert Falcon Scott", "Roald Amundsen", "Ernest Shackleton", "Edmund Hillary"],
+    "correct": 1,
+    "explanation": "Roald Amundsen was the first to reach the South Pole."
+  },
+  {
+    "question": "Which planet has the most moons?",
+    "options": ["Jupiter", "Saturn", "Uranus", "Neptune"],
+    "correct": 1,
+    "explanation": "Saturn currently has the most known moons."
+  },
+  {
+    "question": "What is the largest internal organ in the human body?",
+    "options": ["Heart", "Liver", "Lung", "Kidney"],
+    "correct": 1,
+    "explanation": "The liver is the largest internal organ."
+  },
+  {
+    "question": "Which country was formerly known as Abyssinia?",
+    "options": ["Ethiopia", "Sudan", "Somalia", "Eritrea"],
+    "correct": 0,
+    "explanation": "Ethiopia was formerly known as Abyssinia."
+  },
+  {
+    "question": "Who wrote 'The Republic'?",
+    "options": ["Aristotle", "Plato", "Socrates", "Homer"],
+    "correct": 1,
+    "explanation": "Plato wrote 'The Republic'."
+  },
+  {
+    "question": "What is the chemical symbol for tungsten?",
+    "options": ["Tg", "Tu", "W", "Tn"],
+    "correct": 2,
+    "explanation": "The symbol for tungsten is W."
+  },
+  {
+    "question": "Which African country has the largest population?",
+    "options": ["Egypt", "Nigeria", "Ethiopia", "South Africa"],
+    "correct": 1,
+    "explanation": "Nigeria has the largest population in Africa."
+  },
+  {
+    "question": "What is the largest volcano in the solar system?",
+    "options": ["Mauna Loa", "Mount Everest", "Olympus Mons", "Mount Fuji"],
+    "correct": 2,
+    "explanation": "Olympus Mons on Mars is the largest volcano."
+  },
+  {
+    "question": "Who was the first person to win two Nobel Prizes?",
+    "options": ["Marie Curie", "Linus Pauling", "Albert Einstein", "Frederick Sanger"],
+    "correct": 0,
+    "explanation": "Marie Curie was the first to win two Nobel Prizes."
+  },
+  {
+    "question": "Which is the only mammal capable of true flight?",
+    "options": ["Bat", "Flying squirrel", "Sugar glider", "Colugo"],
+    "correct": 0,
+    "explanation": "Bats are the only mammals capable of true flight."
+  },
+  {
+    "question": "What is the currency of Denmark?",
+    "options": ["Euro", "Krone", "Pound", "Dollar"],
+    "correct": 1,
+    "explanation": "The currency of Denmark is the Krone."
+  },
+  {
+    "question": "Which city hosted the first modern Olympic Games?",
+    "options": ["Paris", "London", "Athens", "Rome"],
+    "correct": 2,
+    "explanation": "Athens hosted the first modern Olympics in 1896."
+  },
+  {
+    "question": "Who discovered penicillin?",
+    "options": ["Alexander Fleming", "Louis Pasteur", "Joseph Lister", "Edward Jenner"],
+    "correct": 0,
+    "explanation": "Alexander Fleming discovered penicillin."
+  },
+  {
+    "question": "Which is the deepest ocean trench in the world?",
+    "options": ["Tonga Trench", "Kuril-Kamchatka Trench", "Mariana Trench", "Puerto Rico Trench"],
+    "correct": 2,
+    "explanation": "The Mariana Trench is the deepest."
+  },
+  {
+    "question": "What is the largest landlocked country in the world?",
+    "options": ["Kazakhstan", "Mongolia", "Chad", "Bolivia"],
+    "correct": 0,
+    "explanation": "Kazakhstan is the largest landlocked country."
+  }
+]

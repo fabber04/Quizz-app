@@ -1,0 +1,95 @@
+.leaderboard-container {
+  background: linear-gradient(135deg, #232526 0%, #414345 100%);
+  border-radius: 18px;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  padding: 32px 24px;
+  margin: 32px auto;
+  max-width: 800px;
+  color: #fff;
+  animation: leaderboardFadeIn 1s;
+}
+
+@keyframes leaderboardFadeIn {
+  from { opacity: 0; transform: translateY(40px);}
+  to { opacity: 1; transform: translateY(0);}
+}
+
+.leaderboard-container h2 {
+  text-align: center;
+  font-size: 2.2rem;
+  margin-bottom: 24px;
+  letter-spacing: 2px;
+  color: #ffd700;
+  text-shadow: 0 2px 8px #000a;
+}
+
+.leaderboard-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  background: rgba(255,255,255,0.05);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px #0002;
+}
+
+.leaderboard-table th, .leaderboard-table td {
+  padding: 14px 12px;
+  text-align: center;
+  font-size: 1.1rem;
+}
+
+.leaderboard-table th {
+  background: rgba(255, 215, 0, 0.15);
+  color: #ffd700;
+  font-weight: bold;
+  border-bottom: 2px solid #ffd70055;
+  letter-spacing: 1px;
+}
+
+.leaderboard-table td {
+  background: rgba(255,255,255,0.08);
+  color: #fff;
+  border-bottom: 1px solid #ffd70022;
+  transition: background 0.2s;
+}
+
+.leaderboard-table td:first-child {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #ffd700;
+  text-shadow: 0 2px 8px #000a;
+}
+
+.leaderboard-table td:not(:first-child) {
+  font-weight: bold;
+  font-size: 1.15rem;
+}
+
+.leaderboard-table td:not(:first-child):not(:empty) {
+  color: #ffd700;
+  text-shadow: 0 1px 4px #000a;
+}
+
+.leaderboard-table td:empty, .leaderboard-table td:contains('-') {
+  color: #bbb;
+  font-style: italic;
+}
+
+.leaderboard-table tr:hover td {
+  background: rgba(255, 215, 0, 0.12);
+  color: #232526;
+}
+
+.leaderboard-table tr:first-child th:first-child {
+  border-top-left-radius: 12px;
+}
+.leaderboard-table tr:first-child th:last-child {
+  border-top-right-radius: 12px;
+}
+.leaderboard-table tr:last-child td:first-child {
+  border-bottom-left-radius: 12px;
+}
+.leaderboard-table tr:last-child td:last-child {
+  border-bottom-right-radius: 12px;
+}

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import './App.css';
 import './difficulty-selector.css';
 import Leadboard from './Leadboard';
@@ -48,6 +48,20 @@ function App() {
   const [difficulty, setDifficulty] = useState('any'); // new state
   const [loggedInUser, setLoggedInUser] = useState(null);
   const [showLeaderboard, setShowLeaderboard] = useState(false);
+  const [bgMuted, setBgMuted] = useState(false);
+  const bgAudioRef = useRef(null);
+
+  // Auto-play background sound when app loads
+  useEffect(() => {
+    if (bgAudioRef.current) {
+      bgAudioRef.current.volume = 0.3;
+      if (!bgMuted) {
+        bgAudioRef.current.play().catch(() => {});
+      } else {
+        bgAudioRef.current.pause();
+      }
+    }
+  }, [bgMuted]);
 
   // Add logout handler
   const handleLogout = () => {
@@ -276,7 +290,10 @@ function App() {
   const handleAnswerSelect = (questionIndex, answerIndex) => {
     const currentQ = questions[questionIndex];
     const isCorrect = answerIndex === currentQ.correct;
-    
+
+    // Play sound effect
+    playSound(isCorrect ? '/sounds/correct.wav' : '/sounds/wrong.mp3');
+
     setSelectedAnswers(prev => ({
       ...prev,
       [questionIndex]: answerIndex
@@ -335,6 +352,9 @@ function App() {
       const total = questions.length;
       const scorePercent = (correct / total) * 100;
 
+      // Play submission sound
+      playSound('/sounds/submit.wav');
+
       // Save user score to leaderboard
       saveUserScore(loggedInUser, selectedCategory.name, Math.round(scorePercent));
 
@@ -388,353 +408,376 @@ function App() {
     return `${minutes}:${remainingSeconds.toString().padStart(2, '0')}`;
   };
 
-  if (!loggedInUser) {
-    return <LoginPage onLogin={setLoggedInUser} />;
-  }
+  const playSound = (src) => {
+    const audio = new window.Audio(src);
+    audio.volume = 0.7; // Adjust volume if needed
+    audio.play();
+  };
 
-  // Category Selection Screen
-  if (appState === 'categories') {
-    return (
-      <div className="app">
-        <div className="categories-screen">
-          <div className="header">
-            <h1>Quiz Master</h1>
-            <p>Choose your challenge and test your knowledge!</p>
-            <button className="logout-btn" onClick={handleLogout}>
-              Logout
+  
+  const answeredCount = Object.keys(selectedAnswers).length;
+  const progress = questions.length > 0 ? Math.round((answeredCount / questions.length) * 100) : 0;
+  const currentQuestion = questions[currentQuestionIndex] || {};
+  const isFirstQuestion = currentQuestionIndex === 0;
+  const isLastQuestion = currentQuestionIndex === questions.length - 1;
+
+  return (
+    <>
+      {/* Background sound */}
+      <audio
+        ref={bgAudioRef}
+        src="/sounds/background.mp3"
+        loop
+        autoPlay
+        style={{ display: 'none' }}
+      />
+      <button
+        className="bg-mute-btn"
+        style={{
+          position: 'fixed',
+          top: 16,
+          right: 16,
+          zIndex: 1000,
+          background: bgMuted ? '#ffd700' : '#232526',
+          color: bgMuted ? '#232526' : '#ffd700',
+          border: 'none',
+          borderRadius: '50%',
+          width: 48,
+          height: 48,
+          fontSize: 24,
+          cursor: 'pointer',
+          boxShadow: '0 2px 8px #0004'
+        }}
+        onClick={() => setBgMuted(m => !m)}
+        title={bgMuted ? 'Unmute background music' : 'Mute background music'}
+      >
+        {bgMuted ? '🔇' : '🔊'}
+      </button>
+
+      {/* --- Place your existing conditional rendering below --- */}
+      {/* Example: */}
+      {!loggedInUser ? (
+        <LoginPage onLogin={setLoggedInUser} />
+      ) : appState === 'categories' ? (
+        <div className="app">
+          <div className="categories-screen">
+            <div className="header">
+              <h1>Quiz Master</h1>
+              <p>Choose your challenge and test your knowledge!</p>
+              <button className="logout-btn" onClick={handleLogout}>
+                Logout
+              </button>
+            </div>
+            {/* Difficulty Selector */}
+            <div className="difficulty-selector">
+              <label>Difficulty: </label>
+              <select value={difficulty} onChange={e => setDifficulty(e.target.value)}>
+                <option value="any">Any</option>
+                <option value="easy">Easy</option>
+                <option value="medium">Medium</option>
+                <option value="hard">Hard</option>
+              </select>
+            </div>
+
+            {error && (
+              <div className="error-message">
+                <p>Error: {error}</p>
+                <p>Make sure the backend server is running on http://localhost:5000</p>
+                <button onClick={loadCategories} className="retry-button">Retry</button>
+              </div>
+            )}
+
+            {loading ? (
+              <div className="loading-container">
+                <div className="spinner"></div>
+                <p>Loading categories...</p>
+              </div>
+            ) : (
+              <div className="categories-grid">
+                {categories.map((category) => (
+                  <div
+                    key={category.id}
+                    className="category-card"
+                    style={{ '--category-color': category.color }}
+                    onClick={() => startQuiz(category.id)}
+                  >
+                    <div className="category-icon">{category.icon}</div>
+                    <h3 className="category-name">{category.name}</h3>
+                    <p className="category-description">{category.description}</p>
+                    <div className="category-meta">
+                      <div className="category-info-row">
+                        <span className="question-count">25 questions</span>
+                        {category.highScore > 0 && (
+                          <div className="high-score-badge">
+                            <span className="trophy-icon">Best: {Math.round(category.highScore)}%</span>
+                          </div>
+                        )}
+                      </div>
+                      <div className="start-indicator">Start Quiz</div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            )}
+            <button className="leaderboard-btn" onClick={() => setShowLeaderboard(!showLeaderboard)}>
+              {showLeaderboard ? 'Hide Leaderboard' : 'Show Leaderboard'}
             </button>
+            {showLeaderboard && <Leadboard categories={categories} />}
           </div>
-          {/* Difficulty Selector */}
-          <div className="difficulty-selector">
-            <label>Difficulty: </label>
-            <select value={difficulty} onChange={e => setDifficulty(e.target.value)}>
-              <option value="any">Any</option>
-              <option value="easy">Easy</option>
-              <option value="medium">Medium</option>
-              <option value="hard">Hard</option>
-            </select>
-          </div>
-
-          {error && (
-            <div className="error-message">
-              <p>Error: {error}</p>
-              <p>Make sure the backend server is running on http://localhost:5000</p>
-              <button onClick={loadCategories} className="retry-button">Retry</button>
+        </div>
+      ) : appState === 'results' ? (
+        <div className="app">
+          <div className="results-screen">
+            <div className="results-header">
+              <h1>Quiz Complete!</h1>
+              <div className="category-badge" style={{ backgroundColor: selectedCategory?.color }}>
+                {selectedCategory?.icon} {selectedCategory?.name}
+              </div>
+              <button className="logout-btn" onClick={handleLogout}>
+                Logout
+              </button>
             </div>
-          )}
 
-          {loading ? (
-            <div className="loading-container">
-              <div className="spinner"></div>
-              <p>Loading categories...</p>
+            {score.isNewHighScore && (
+              <div className="new-high-score-banner">
+                <span className="trophy-large">TROPHY</span>
+                <h2>New High Score!</h2>
+                <p>You beat your previous best of {Math.round(score.previousHighScore)}%</p>
+              </div>
+            )}
+
+            <div className="score-display">
+              <div className="score-circle">
+                <div className="score-number">{score.correct}/{score.total}</div>
+                <div className="score-percentage">{Math.round(score.score)}%</div>
+              </div>
+              <div className="score-text">
+                <h2>{score.correct === score.total ? 'Perfect Score!' : 
+                     score.score >= 80 ? 'Great Job!' : 
+                     score.score >= 60 ? 'Good Work!' : 'Keep Practicing!'}</h2>
+                <p>You got {score.correct} out of {score.total} questions correct</p>
+                <p className="time-taken">Time: {formatTime(totalTimeElapsed)}</p>
+                {score.currentHighScore > 0 && !score.isNewHighScore && (
+                  <p className="high-score-info">
+                    Best Score: {Math.round(score.currentHighScore)}%
+                  </p>
+                )}
+              </div>
             </div>
-          ) : (
-            <div className="categories-grid">
-              {categories.map((category) => (
-                <div
-                  key={category.id}
-                  className="category-card"
-                  style={{ '--category-color': category.color }}
-                  onClick={() => startQuiz(category.id)}
-                >
-                  <div className="category-icon">{category.icon}</div>
-                  <h3 className="category-name">{category.name}</h3>
-                  <p className="category-description">{category.description}</p>
-                  <div className="category-meta">
-                    <div className="category-info-row">
-                      <span className="question-count">25 questions</span>
-                      {category.highScore > 0 && (
-                        <div className="high-score-badge">
-                          <span className="trophy-icon">Best: {Math.round(category.highScore)}%</span>
+
+            <div className="detailed-results">
+              <h3>Review Your Answers</h3>
+              {questions.map((questionData, index) => {
+                // Find user's answer and correctness
+                const userAnswerIndex = selectedAnswers[index];
+                const userAnswer = userAnswerIndex !== undefined ? questionData.options[userAnswerIndex] : 'No answer';
+                const correctAnswer = questionData.options[questionData.correct];
+                const isCorrect = userAnswerIndex === questionData.correct;
+
+                return (
+                  <div key={index} className={`result-item ${isCorrect ? 'correct' : 'incorrect'}`}>
+                    <div className="result-question">
+                      <span className="question-number">Q{index + 1}</span>
+                      <span className="question-text">{questionData.question}</span>
+                    </div>
+                    <div className="result-answers">
+                      <div className={`answer-result ${isCorrect ? 'correct' : 'incorrect'}`}>
+                        <span className="answer-label">Your Answer:</span>
+                        <span className="answer-text">{userAnswer}</span>
+                        {isCorrect ? <span className="checkmark">CORRECT</span> : <span className="cross">WRONG</span>}
+                      </div>
+                      {!isCorrect && (
+                        <div className="correct-answer">
+                          <span className="answer-label">Correct Answer:</span>
+                          <span className="answer-text">{correctAnswer}</span>
                         </div>
                       )}
                     </div>
-                    <div className="start-indicator">Start Quiz</div>
+                    {questionData.explanation && (
+                      <div className="result-explanation">
+                        <span className="explanation-label">Explanation:</span>
+                        <p className="explanation-text">{questionData.explanation}</p>
+                      </div>
+                    )}
                   </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
-          )}
-          <button className="leaderboard-btn" onClick={() => setShowLeaderboard(!showLeaderboard)}>
-            {showLeaderboard ? 'Hide Leaderboard' : 'Show Leaderboard'}
-          </button>
-          {showLeaderboard && <Leadboard categories={categories} />}
-        </div>
-      </div>
-    );
-  }
 
-  // Results Screen
-  if (appState === 'results') {
-    return (
-      <div className="app">
-        <div className="results-screen">
-          <div className="results-header">
-            <h1>Quiz Complete!</h1>
-            <div className="category-badge" style={{ backgroundColor: selectedCategory?.color }}>
-              {selectedCategory?.icon} {selectedCategory?.name}
+            {maxStreak > 1 && (
+              <div className="max-streak-display">
+                <span className="max-streak-icon">FIRE</span>
+                <p>Best Streak: {maxStreak} correct in a row!</p>
+              </div>
+            )}
+
+            <div className="results-actions">
+              <button className="action-button secondary" onClick={resetToCategories}>
+                Choose Another Category
+              </button>
+              {wrongAnswers.length > 0 && (
+                <button 
+                  className="action-button retry-wrong" 
+                  onClick={() => startQuiz(selectedCategory.id, true, wrongAnswers)}
+                >
+                  Practice Wrong Answers ({wrongAnswers.length})
+                </button>
+              )}
+              <button className="action-button primary" onClick={() => startQuiz(selectedCategory.id)}>
+                Retry Full Quiz
+              </button>
             </div>
+          </div>
+        </div>
+      ) : appState === 'quiz' && questions.length > 0 ? (
+        <div className="app">
+          <div className="quiz-container">
+            <div className="quiz-header">
+              <div className="quiz-title">
+                <div className="category-info">
+                  <span className="category-icon" style={{ color: selectedCategory?.color }}>
+                    {selectedCategory?.icon}
+                  </span>
+                  <span className="category-name">{selectedCategory?.name}</span>
+                </div>
+                <div className="quiz-stats-row">
+                  <div className="quiz-timer">
+                    <span className="timer-icon">TIME</span>
+                    <span className="timer-value">{formatTime(currentTime)}</span>
+                  </div>
+                  {streak > 0 && (
+                    <div className="streak-counter">
+                      <span className="streak-icon">FIRE</span>
+                      <span className="streak-value">{streak} Streak!</span>
+                    </div>
+                  )}
+                </div>
+                <button className="back-button" onClick={resetToCategories}>Back</button>
+              </div>
+              
+              <div className="quiz-progress-info">
+                <div className="progress-stats">
+                  <span className="progress-label">Progress: {answeredCount}/{questions.length} answered</span>
+                  <span className="progress-percentage">{progress}% Complete</span>
+                </div>
+                {answeredCount === questions.length && (
+                  <div className="ready-submit-message">
+                    All questions answered! Click Submit below to see your results.
+                  </div>
+                )}
+              </div>
+
+              <div className="progress-section">
+                <div className="progress-text">
+                  Question {currentQuestionIndex + 1} of {questions.length}
+                </div>
+                <div className="progress-bar">
+                  <div 
+                    className="progress-fill" 
+                    style={{ 
+                      width: `${((currentQuestionIndex + 1) / questions.length) * 100}%`,
+                      backgroundColor: selectedCategory?.color
+                    }}
+                  ></div>
+                </div>
+              </div>
+            </div>
+
+            <div className="question-container">
+              <div className="question-header">
+                <h2 className="question-text">{currentQuestion.question}</h2>
+              </div>
+              
+              <div className="answers-container">
+                {currentQuestion.options.map((option, index) => {
+                  const isSelected = selectedAnswers[currentQuestionIndex] === index;
+                  const isCorrect = index === currentQuestion.correct;
+                  const isWrong = isSelected && !isCorrect;
+                  const showFeedback = selectedAnswers[currentQuestionIndex] !== undefined;
+                  
+                  return (
+                    <button
+                      key={index}
+                      className={`answer-button ${
+                        isSelected ? 'selected' : ''
+                      } ${showFeedback && isCorrect ? 'correct-answer' : ''} ${
+                        showFeedback && isWrong ? 'wrong-answer' : ''
+                      }`}
+                      onClick={() => handleAnswerSelect(currentQuestionIndex, index)}
+                      disabled={selectedAnswers[currentQuestionIndex] !== undefined}
+                      style={{
+                        '--category-color': selectedCategory?.color
+                      }}
+                    >
+                      <span className="option-letter">{String.fromCharCode(65 + index)}</span>
+                      <span className="option-text">{option}</span>
+                      {showFeedback && isCorrect && <span className="feedback-icon">CHECK</span>}
+                      {showFeedback && isWrong && <span className="feedback-icon">CROSS</span>}
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+
+            <div className="navigation">
+              <button 
+                className="nav-button" 
+                onClick={previousQuestion} 
+                disabled={isFirstQuestion}
+              >
+                Previous
+              </button>
+              
+              <div className="question-indicators">
+                {questions.map((_, index) => (
+                  <div
+                    key={index}
+                    className={`indicator ${
+                      index === currentQuestionIndex ? 'current' : 
+                      selectedAnswers[index] !== undefined ? 'answered' : 'unanswered'
+                    }`}
+                    onClick={() => setCurrentQuestionIndex(index)}
+                    title={`Question ${index + 1}`}
+                  />
+                ))}
+              </div>
+              
+              {isLastQuestion && answeredCount === questions.length ? (
+                <button 
+                  className="nav-button primary submit-btn" 
+                  onClick={submitQuiz}
+                  disabled={loading}
+                >
+                  {loading ? 'Submitting...' : 'Submit Quiz'}
+                </button>
+              ) : (
+                <button 
+                  className="nav-button" 
+                  onClick={nextQuestion}
+                  disabled={isLastQuestion}
+                >
+                  Next
+                </button>
+              )}
+            </div>
+
+            {error && <p className="error-message">Error: {error}</p>}
+          </div>
+        </div>
+      ) : (
+        <div className="app">
+          <div className="loading-screen">
+            <div className="spinner"></div>
+            <h2>Loading questions...</h2>
+            {error && <p className="error">Error: {error}</p>}
             <button className="logout-btn" onClick={handleLogout}>
               Logout
             </button>
           </div>
-
-          {score.isNewHighScore && (
-            <div className="new-high-score-banner">
-              <span className="trophy-large">TROPHY</span>
-              <h2>New High Score!</h2>
-              <p>You beat your previous best of {Math.round(score.previousHighScore)}%</p>
-            </div>
-          )}
-
-          <div className="score-display">
-            <div className="score-circle">
-              <div className="score-number">{score.correct}/{score.total}</div>
-              <div className="score-percentage">{Math.round(score.score)}%</div>
-            </div>
-            <div className="score-text">
-              <h2>{score.correct === score.total ? 'Perfect Score!' : 
-                   score.score >= 80 ? 'Great Job!' : 
-                   score.score >= 60 ? 'Good Work!' : 'Keep Practicing!'}</h2>
-              <p>You got {score.correct} out of {score.total} questions correct</p>
-              <p className="time-taken">Time: {formatTime(totalTimeElapsed)}</p>
-              {score.currentHighScore > 0 && !score.isNewHighScore && (
-                <p className="high-score-info">
-                  Best Score: {Math.round(score.currentHighScore)}%
-                </p>
-              )}
-            </div>
-          </div>
-
-          <div className="detailed-results">
-            <h3>Review Your Answers</h3>
-            {questions.map((questionData, index) => {
-              // Find user's answer and correctness
-              const userAnswerIndex = selectedAnswers[index];
-              const userAnswer = userAnswerIndex !== undefined ? questionData.options[userAnswerIndex] : 'No answer';
-              const correctAnswer = questionData.options[questionData.correct];
-              const isCorrect = userAnswerIndex === questionData.correct;
-
-              return (
-                <div key={index} className={`result-item ${isCorrect ? 'correct' : 'incorrect'}`}>
-                  <div className="result-question">
-                    <span className="question-number">Q{index + 1}</span>
-                    <span className="question-text">{questionData.question}</span>
-                  </div>
-                  <div className="result-answers">
-                    <div className={`answer-result ${isCorrect ? 'correct' : 'incorrect'}`}>
-                      <span className="answer-label">Your Answer:</span>
-                      <span className="answer-text">{userAnswer}</span>
-                      {isCorrect ? <span className="checkmark">CORRECT</span> : <span className="cross">WRONG</span>}
-                    </div>
-                    {!isCorrect && (
-                      <div className="correct-answer">
-                        <span className="answer-label">Correct Answer:</span>
-                        <span className="answer-text">{correctAnswer}</span>
-                      </div>
-                    )}
-                  </div>
-                  {questionData.explanation && (
-                    <div className="result-explanation">
-                      <span className="explanation-label">Explanation:</span>
-                      <p className="explanation-text">{questionData.explanation}</p>
-                    </div>
-                  )}
-                </div>
-              );
-            })}
-          </div>
-
-          {maxStreak > 1 && (
-            <div className="max-streak-display">
-              <span className="max-streak-icon">FIRE</span>
-              <p>Best Streak: {maxStreak} correct in a row!</p>
-            </div>
-          )}
-
-          <div className="results-actions">
-            <button className="action-button secondary" onClick={resetToCategories}>
-              Choose Another Category
-            </button>
-            {wrongAnswers.length > 0 && (
-              <button 
-                className="action-button retry-wrong" 
-                onClick={() => startQuiz(selectedCategory.id, true, wrongAnswers)}
-              >
-                Practice Wrong Answers ({wrongAnswers.length})
-              </button>
-            )}
-            <button className="action-button primary" onClick={() => startQuiz(selectedCategory.id)}>
-              Retry Full Quiz
-            </button>
-          </div>
         </div>
-      </div>
-    );
-  }
-
-  // Quiz Screen
-  if (appState === 'quiz' && questions.length > 0) {
-    const currentQuestion = questions[currentQuestionIndex];
-    const isLastQuestion = currentQuestionIndex === questions.length - 1;
-    const isFirstQuestion = currentQuestionIndex === 0;
-    const answeredCount = Object.keys(selectedAnswers).length;
-    const progress = ((answeredCount / questions.length) * 100).toFixed(0);
-
-    return (
-      <div className="app">
-        <div className="quiz-container">
-          <div className="quiz-header">
-            <div className="quiz-title">
-              <div className="category-info">
-                <span className="category-icon" style={{ color: selectedCategory?.color }}>
-                  {selectedCategory?.icon}
-                </span>
-                <span className="category-name">{selectedCategory?.name}</span>
-              </div>
-              <div className="quiz-stats-row">
-                <div className="quiz-timer">
-                  <span className="timer-icon">TIME</span>
-                  <span className="timer-value">{formatTime(currentTime)}</span>
-                </div>
-                {streak > 0 && (
-                  <div className="streak-counter">
-                    <span className="streak-icon">FIRE</span>
-                    <span className="streak-value">{streak} Streak!</span>
-                  </div>
-                )}
-              </div>
-              <button className="back-button" onClick={resetToCategories}>Back</button>
-            </div>
-            
-            <div className="quiz-progress-info">
-              <div className="progress-stats">
-                <span className="progress-label">Progress: {answeredCount}/{questions.length} answered</span>
-                <span className="progress-percentage">{progress}% Complete</span>
-              </div>
-              {answeredCount === questions.length && (
-                <div className="ready-submit-message">
-                  All questions answered! Click Submit below to see your results.
-                </div>
-              )}
-            </div>
-
-            <div className="progress-section">
-              <div className="progress-text">
-                Question {currentQuestionIndex + 1} of {questions.length}
-              </div>
-              <div className="progress-bar">
-                <div 
-                  className="progress-fill" 
-                  style={{ 
-                    width: `${((currentQuestionIndex + 1) / questions.length) * 100}%`,
-                    backgroundColor: selectedCategory?.color
-                  }}
-                ></div>
-              </div>
-            </div>
-          </div>
-
-          <div className="question-container">
-            <div className="question-header">
-              <h2 className="question-text">{currentQuestion.question}</h2>
-            </div>
-            
-            <div className="answers-container">
-              {currentQuestion.options.map((option, index) => {
-                const isSelected = selectedAnswers[currentQuestionIndex] === index;
-                const isCorrect = index === currentQuestion.correct;
-                const isWrong = isSelected && !isCorrect;
-                const showFeedback = selectedAnswers[currentQuestionIndex] !== undefined;
-                
-                return (
-                  <button
-                    key={index}
-                    className={`answer-button ${
-                      isSelected ? 'selected' : ''
-                    } ${showFeedback && isCorrect ? 'correct-answer' : ''} ${
-                      showFeedback && isWrong ? 'wrong-answer' : ''
-                    }`}
-                    onClick={() => handleAnswerSelect(currentQuestionIndex, index)}
-                    disabled={selectedAnswers[currentQuestionIndex] !== undefined}
-                    style={{
-                      '--category-color': selectedCategory?.color
-                    }}
-                  >
-                    <span className="option-letter">{String.fromCharCode(65 + index)}</span>
-                    <span className="option-text">{option}</span>
-                    {showFeedback && isCorrect && <span className="feedback-icon">CHECK</span>}
-                    {showFeedback && isWrong && <span className="feedback-icon">CROSS</span>}
-                  </button>
-                );
-              })}
-            </div>
-          </div>
-
-          <div className="navigation">
-            <button 
-              className="nav-button" 
-              onClick={previousQuestion} 
-              disabled={isFirstQuestion}
-            >
-              Previous
-            </button>
-            
-            <div className="question-indicators">
-              {questions.map((_, index) => (
-                <div
-                  key={index}
-                  className={`indicator ${
-                    index === currentQuestionIndex ? 'current' : 
-                    selectedAnswers[index] !== undefined ? 'answered' : 'unanswered'
-                  }`}
-                  onClick={() => setCurrentQuestionIndex(index)}
-                  title={`Question ${index + 1}`}
-                />
-              ))}
-            </div>
-            
-            {isLastQuestion && answeredCount === questions.length ? (
-              <button 
-                className="nav-button primary submit-btn" 
-                onClick={submitQuiz}
-                disabled={loading}
-              >
-                {loading ? 'Submitting...' : 'Submit Quiz'}
-              </button>
-            ) : (
-              <button 
-                className="nav-button" 
-                onClick={nextQuestion}
-                disabled={isLastQuestion}
-              >
-                Next
-              </button>
-            )}
-          </div>
-
-          {error && <p className="error-message">Error: {error}</p>}
-        </div>
-      </div>
-    );
-  }
-
-  // Loading screen for questions
-  return (
-    <div className="app">
-      <div className="loading-screen">
-        <div className="spinner"></div>
-        <h2>Loading questions...</h2>
-        {error && <p className="error">Error: {error}</p>}
-        <button className="logout-btn" onClick={handleLogout}>
-          Logout
-        </button>
-      </div>
-    </div>
+      )}
+    </>
   );
 }
-
-
-
 
 export default App;

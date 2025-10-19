@@ -1293,3 +1293,34 @@ body {
   background: linear-gradient(90deg, #a777e3 0%, #6e8efb 100%);
 }
 
+/* background icons */
+
+.background-icons {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+
+}
+
+.floating-icon {
+  position: absolute;
+  width: 60px;
+  opacity: 0.12;
+  animation: float 10s ease-in-out infinite;
+}
+
+/* floating movement */
+
+@keyframes float{
+  0% {transform: translateY(0) rotate(0deg);}
+  25% {transform: translateY(-25px) rotate(10deg);}
+  50% {transform: translateY(0) rotate(0deg);}
+  75% {transform: translateY(25px) rotate(-10deg);}
+  100% {transform: translateY(0) rotate(0deg);}
+}
+

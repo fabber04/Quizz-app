@@ -28,6 +28,14 @@ import react from 'react';
 const API_BASE_URL = 'http://localhost:5000/api';
 
 function App() {
+  const scienceIcons = [
+    'background/science/atomic.png',
+    'background/science/bacteria.png',
+    'background/science/beaker.png',
+    'background/science/dna.png',
+    'background/science/microscope.png',
+    'background/science/test-tube.png',
+  ];
   const [categories, setCategories] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState(null);
   const [questions, setQuestions] = useState([]);

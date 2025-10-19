@@ -800,6 +800,24 @@ function App() {
       )}
     </>
   );
+
+  return (
+    <div className="background-icons">
+      {scienceIcons.map((src, i) => (
+      <img
+      key={i}
+      src={src}
+      alt=""
+className= "floating-icon"
+style={{
+  top: '${Math.random() * 90}%',
+  left: '${Math.random() * 90}%',
+  animationDelay: '${Math.random() * 5}s'
+}}
+/>
+))}
+    </div>
+)
 }
 
 export default App;

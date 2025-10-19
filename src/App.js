@@ -60,6 +60,15 @@ function App() {
   const [showLeaderboard, setShowLeaderboard] = useState(false); // toggle to show the leaderboard
   const [bgMuted, setBgMuted] = useState(false); // background sound
   const bgAudioRef = useRef(null);
+  const [showSplash, setShowSplash] = useState(true); // Splash screen on startup
+
+  // Splash screen timer
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowSplash(false);
+    }, 2500); // Show splash for 2.5 seconds
+    return () => clearTimeout(timer);
+  }, []);
 
   // Auto-play background sound only when logged in
   useEffect(() => {
@@ -446,6 +455,22 @@ function App() {
 
   return (
     <>
+      {/* Splash Screen */}
+      {showSplash && (
+        <div className="splash-screen">
+          <div className="splash-content">
+            <div className="splash-logo">
+              <h1 className="splash-title">Quiz Master</h1>
+              <div className="splash-icon">🎓</div>
+            </div>
+            <div className="splash-footer">
+              <p className="splash-from">from</p>
+              <p className="splash-company">Group 6 devs</p>
+            </div>
+          </div>
+        </div>
+      )}
+
       {/* Background sound */}
       <audio
         ref={bgAudioRef}
@@ -798,26 +823,25 @@ function App() {
           </div>
         </div>
       )}
+
+      {/* Footer - Always visible */}
+      {!showSplash && !loggedInUser && (
+        <div className="app-footer">
+          <p className="footer-text">
+            Made by <span className="footer-company">Group 6 devs</span>
+          </p>
+        </div>
+      )}
+      
+      {!showSplash && loggedInUser && (
+        <div className="app-footer">
+          <p className="footer-text">
+            Made by <span className="footer-company">Group 6 devs</span>
+          </p>
+        </div>
+      )}
     </>
   );
-
-  return (
-    <div className="background-icons">
-      {scienceIcons.map((src, i) => (
-      <img
-      key={i}
-      src={src}
-      alt=""
-className= "floating-icon"
-style={{
-  top: '${Math.random() * 90}%',
-  left: '${Math.random() * 90}%',
-  animationDelay: '${Math.random() * 5}s'
-}}
-/>
-))}
-    </div>
-)
 }
 
 export default App;

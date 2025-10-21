@@ -1,17 +1,17 @@
 .login-bg {
   min-height: 100vh;
-  background: linear-gradient(135deg, #6e8efb 0%, #a777e3 100%);
+  background: linear-gradient(135deg, hsl(71, 54%, 50%) 0%, #3b9e37 100%);
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .login-glass {
-  background: rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.123);
   box-shadow: 0 8px 40px rgba(80, 80, 180, 0.18);
   border-radius: 24px;
   padding: 2.5rem 2.5rem 2rem 2.5rem;
-  max-width: 400px;
+  max-width: 500px;
   width: 100%;
   backdrop-filter: blur(12px);
   display: flex;
@@ -30,15 +30,28 @@
   display: block;
 }
 
+.login-logo img{
+
+  width: 40px;
+  height: 50px;
+}
+
 .login-header h1 {
   font-size: 2rem;
   font-weight: 700;
-  color: #4b3ca7;
+  color: #ffffff;
   margin-bottom: 0.5rem;
 }
 
+.appname{
+  font-family: 'poppins';
+  letter-spacing: 4px;
+  font-weight: bold;
+  color: #ffffff;
+}
+
 .login-subtitle {
-  color: #6e8efb;
+  color: #e4e4e4;
   font-size: 1.1rem;
   margin-bottom: 0.5rem;
 }
@@ -62,24 +75,27 @@
 
 .login-input:focus {
   outline: none;
-  box-shadow: 0 2px 18px #a777e3;
+  box-shadow: 0 2px 18px #358d4b;
 }
 
 .login-btn {
   padding: 0.9rem 0;
   border-radius: 10px;
   border: none;
-  background: linear-gradient(90deg, #6e8efb 0%, #a777e3 100%);
+  background: linear-gradient(90deg, #3ea046 0%, rgb(36, 114, 34) 100%);
+  background-size: 200%;
+  background-position: left;
   color: #fff;
   font-size: 1.15rem;
   font-weight: 600;
   cursor: pointer;
   box-shadow: 0 2px 12px rgba(80,80,180,0.12);
-  transition: background 0.2s;
+  transition: background-position 0.4s ease;
 }
 
 .login-btn:hover {
-  background: linear-gradient(90deg, #a777e3 0%, #6e8efb 100%);
+
+  background-position: right;
 }
 
 .login-error {
@@ -94,7 +110,7 @@
 
 .login-footer {
   margin-top: 2rem;
-  color: #4b3ca7;
+  color: #363636;
   font-size: 0.95rem;
   text-align: center;
   opacity: 0.8;

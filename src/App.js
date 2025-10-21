@@ -22,20 +22,10 @@ import generalKnowledgeMediumQuestions from './questions/GeneralKnowledge/medium
 import generalKnowledgeHardQuestions from './questions/GeneralKnowledge/hard.json';
 import generalKnowledgeAnyQuestions from './questions/GeneralKnowledge/any.json';
 import LoginPage from './LoginPage';
-import confetti from "canvas-confetti";
-import react from 'react';
 
 const API_BASE_URL = 'http://localhost:5000/api';
 
 function App() {
-  const scienceIcons = [
-    'background/science/atomic.png',
-    'background/science/bacteria.png',
-    'background/science/beaker.png',
-    'background/science/dna.png',
-    'background/science/microscope.png',
-    'background/science/test-tube.png',
-  ];
   const [categories, setCategories] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState(null);
   const [questions, setQuestions] = useState([]);
@@ -60,28 +50,18 @@ function App() {
   const [showLeaderboard, setShowLeaderboard] = useState(false); // toggle to show the leaderboard
   const [bgMuted, setBgMuted] = useState(false); // background sound
   const bgAudioRef = useRef(null);
-  const [showSplash, setShowSplash] = useState(true); // Splash screen on startup
 
-  // Splash screen timer
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setShowSplash(false);
-    }, 2500); // Show splash for 2.5 seconds
-    return () => clearTimeout(timer);
-  }, []);
-
-  // Auto-play background sound only when logged in
+  // Auto-play background sound when app loads
   useEffect(() => {
     if (bgAudioRef.current) {
       bgAudioRef.current.volume = 0.3;
-      if (loggedInUser && !bgMuted) {
+      if (!bgMuted) {
         bgAudioRef.current.play().catch(() => {});
       } else {
         bgAudioRef.current.pause();
-        bgAudioRef.current.currentTime = 0; // Reset to start
       }
     }
-  }, [bgMuted, loggedInUser]);
+  }, [bgMuted]);
 
   // Add logout handler
   const handleLogout = () => {
@@ -93,7 +73,6 @@ function App() {
     setSelectedAnswers({});
     setScore(null);
     setError(null);
-    setBgMuted(false); // Optionally reset mute on logout
   };
 
   // Live timer effect
@@ -315,15 +294,6 @@ function App() {
     // Play sound effect for either the correct or wrong answer
     playSound(isCorrect ? '/sounds/correct.wav' : '/sounds/wrong.mp3');
 
-    // trigger a confetti when answer is correct
-    if (isCorrect) {
-      confetti({
-        particleCount: 150,
-        spread: 80,
-        origin: {y: 0.5},
-      });
-    }
-    
     setSelectedAnswers(prev => ({
       ...prev,
       [questionIndex]: answerIndex
@@ -440,7 +410,6 @@ function App() {
 
   // Play sound in the background 
   const playSound = (src) => {
-    if (bgMuted) return; // Don't play if muted
     const audio = new window.Audio(src);
     audio.volume = 0.7; // Adjust volume if needed
     audio.play();
@@ -455,22 +424,6 @@ function App() {
 
   return (
     <>
-      {/* Splash Screen */}
-      {showSplash && (
-        <div className="splash-screen">
-          <div className="splash-content">
-            <div className="splash-logo">
-              <h1 className="splash-title">Quiz Master</h1>
-              <div className="splash-icon">🎓</div>
-            </div>
-            <div className="splash-footer">
-              <p className="splash-from">from</p>
-              <p className="splash-company">Group 6 devs</p>
-            </div>
-          </div>
-        </div>
-      )}
-
       {/* Background sound */}
       <audio
         ref={bgAudioRef}
@@ -480,27 +433,17 @@ function App() {
         style={{ display: 'none' }}
       />
       <button
-        className="bg-mute-btn"
-        style={{
-          position: 'fixed',
-          top: 16,
-          right: 16,
-          zIndex: 1000,
-          background: bgMuted ? '#ffd700' : '#232526',
-          color: bgMuted ? '#232526' : '#ffd700',
-          border: 'none',
-          borderRadius: '50%',
-          width: 48,
-          height: 48,
-          fontSize: 24,
-          cursor: 'pointer',
-          boxShadow: '0 2px 8px #0004'
-        }}
-        onClick={() => setBgMuted(m => !m)}
-        title={bgMuted ? 'Unmute background music' : 'Mute background music'}
-      >
-        {bgMuted ? '🔇' : '🔊'}
-      </button>
+  className="bg-mute-btn"
+  style={{
+    background: bgMuted ? '#ffd700' : '#232526',
+    color: bgMuted ? '#232526' : '#ffd700',
+  }}
+  onClick={() => setBgMuted(m => !m)}
+  title={bgMuted ? 'Unmute background music' : 'Mute background music'}
+>
+  {bgMuted ? '🔇' : '🔊'}
+</button>
+
 
      
       {!loggedInUser ? (
@@ -509,22 +452,45 @@ function App() {
         <div className="app">
           <div className="categories-screen">
             <div className="header">
-              <h1>Quiz Master</h1>
+              <img src="thinkbit-high-resolution-logo-transparent.png" className="app-logo"></img>
+              <h1>THINKB1T</h1>
+              <br/>
+              <br/>
               <p>Choose your challenge and test your knowledge!</p>
-              <button className="logout-btn" onClick={handleLogout}>
-                Logout
+              <br/>
+              <br/>
+               <button className="logout-btn" onClick={handleLogout}>
+                <img src="logout.png" className="logout-icon" alt="Logout" />
+                <span className="logout-text">Logout</span>
               </button>
-            </div>
-            {/* Difficulty Selector */}
+              <div className="options-section">
+              {/* Difficulty Selector */}
             <div className="difficulty-selector">
-              <label>Difficulty: </label>
-              <select value={difficulty} onChange={e => setDifficulty(e.target.value)}>
-                <option value="any">Any</option>
-                <option value="easy">Easy</option>
-                <option value="medium">Medium</option>
-                <option value="hard">Hard</option>
-              </select>
+              <img src="speedometer1.png" className="difficulty-icon"></img>
+              
+              <div className="difficulty-text-box">
+                <label>Difficulty: </label>
+                <select value={difficulty} onChange={e => setDifficulty(e.target.value)}>
+                  <option value="any">Any</option>
+                  <option value="easy">Easy</option>
+                  <option value="medium">Medium</option>
+                  <option value="hard">Hard</option>
+                </select>
+              </div>
             </div>
+              
+               <button className="leaderboard-btn" onClick={() => setShowLeaderboard(!showLeaderboard)}>
+                <img src="leaderboard1.png" className="leaderboard-icon"></img>
+              {showLeaderboard ? 'Hide Leaderboard' : 'Show Leaderboard'}
+            </button>
+            </div>
+            </div>
+            
+
+            <br/>
+            <img src="/downarrow.png" className="category-logo" alt="down arrow" />
+
+
 
             {error && (
               <div className="error-message">
@@ -566,9 +532,7 @@ function App() {
                 ))}
               </div>
             )}
-            <button className="leaderboard-btn" onClick={() => setShowLeaderboard(!showLeaderboard)}>
-              {showLeaderboard ? 'Hide Leaderboard' : 'Show Leaderboard'}
-            </button>
+           
             {showLeaderboard && <Leadboard categories={categories} />}
           </div>
         </div>
@@ -821,23 +785,6 @@ function App() {
               Logout
             </button>
           </div>
-        </div>
-      )}
-
-      {/* Footer - Always visible */}
-      {!showSplash && !loggedInUser && (
-        <div className="app-footer">
-          <p className="footer-text">
-            Made by <span className="footer-company">Group 6 devs</span>
-          </p>
-        </div>
-      )}
-      
-      {!showSplash && loggedInUser && (
-        <div className="app-footer">
-          <p className="footer-text">
-            Made by <span className="footer-company">Group 6 devs</span>
-          </p>
         </div>
       )}
     </>

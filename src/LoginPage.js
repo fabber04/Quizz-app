@@ -37,8 +37,8 @@ export default function LoginPage({ onLogin }) {
     <div className="login-bg">
       <div className="login-glass">
         <div className="login-header">
-          <span className="login-logo">🎉</span>
-          <h1>Welcome to Quiz Master</h1>
+          <span className="login-logo"><img src="thinkbit-high-resolution-logo-transparent.png"></img></span>
+          <h1>Welcome to <span className="appname">Thinkbit</span></h1>
           <p className="login-subtitle">Sign in to test your knowledge!</p>
         </div>
         <form className="login-form" onSubmit={handleSubmit}>

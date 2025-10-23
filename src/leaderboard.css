@@ -1,10 +1,10 @@
 .leaderboard-container {
-  background: linear-gradient(135deg, #232526 0%, #414345 100%);
+  background: linear-gradient(135deg, hsl(71, 73%, 43%) 0%, #a4db4a 100%, #b8e64e 100%);
   border-radius: 18px;
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
   padding: 32px 24px;
   margin: 32px auto;
-  max-width: 800px;
+  max-width: 1200px;
   color: #fff;
   animation: leaderboardFadeIn 1s;
 }
@@ -19,18 +19,24 @@
   font-size: 2.2rem;
   margin-bottom: 24px;
   letter-spacing: 2px;
-  color: #ffd700;
-  text-shadow: 0 2px 8px #000a;
+  color: #ffffff;
+}
+
+.leaderboard-container .leaderboard-icon {
+  display: block;
+  margin: 0 auto 10px auto;
+  width: 70px;
+  height: 70px;
 }
 
 .leaderboard-table {
   width: 100%;
   border-collapse: separate;
   border-spacing: 0;
-  background: rgba(255,255,255,0.05);
+  background: rgb(81, 187, 95);
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 2px 12px #0002;
+  /* box-shadow: 0 2px 12px #0002; */
 }
 
 .leaderboard-table th, .leaderboard-table td {
@@ -40,15 +46,19 @@
 }
 
 .leaderboard-table th {
-  background: rgba(255, 215, 0, 0.15);
-  color: #ffd700;
+  background: rgb(43, 43, 43);
+  color: #ffffff;
   font-weight: bold;
   border-bottom: 2px solid #ffd70055;
   letter-spacing: 1px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+
 }
 
 .leaderboard-table td {
-  background: rgba(255,255,255,0.08);
+  
+  background: rgba(100, 100, 100, 0.884);
   color: #fff;
   border-bottom: 1px solid #ffd70022;
   transition: background 0.2s;
@@ -56,19 +66,19 @@
 
 .leaderboard-table td:first-child {
   font-size: 1.3rem;
-  font-weight: bold;
-  color: #ffd700;
-  text-shadow: 0 2px 8px #000a;
+  
+  color: #ffffff;
+  
 }
 
 .leaderboard-table td:not(:first-child) {
-  font-weight: bold;
+  
   font-size: 1.15rem;
 }
 
 .leaderboard-table td:not(:first-child):not(:empty) {
-  color: #ffd700;
-  text-shadow: 0 1px 4px #000a;
+  color: #ffffff;
+ 
 }
 
 .leaderboard-table td:empty, .leaderboard-table td:contains('-') {
@@ -77,7 +87,8 @@
 }
 
 .leaderboard-table tr:hover td {
-  background: rgba(255, 215, 0, 0.12);
+  /* background: rgba(255, 215, 0, 0.12); */
+  background: rgb(78, 78, 78);
   color: #232526;
 }
 

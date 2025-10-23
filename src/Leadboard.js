@@ -30,7 +30,11 @@ function Leadboard({ categories }) {
   const sortedStats = [...userStats].sort((a, b) => (b.avg || 0) - (a.avg || 0));
 
   return (
+    <div className="leaderboardALL">
+      <img src="/downarrow.png" className="category-logo" alt="down arrow" />
+
     <div className="leaderboard-container">
+      <img src="leaderboard1.png" className="leaderboard-icon"></img>
       <h2>Leaderboard</h2>
       <table className="leaderboard-table">
         <thead>
@@ -68,6 +72,7 @@ function Leadboard({ categories }) {
           )}
         </tbody>
       </table>
+    </div>
     </div>
   );
 }

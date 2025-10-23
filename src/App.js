@@ -532,7 +532,11 @@ function App() {
                 ))}
               </div>
             )}
-           
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            
             {showLeaderboard && <Leadboard categories={categories} />}
           </div>
         </div>
